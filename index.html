@@ -23,7 +23,7 @@
     <link href="dataviz/styles/main.css" rel="stylesheet" type="text/css">
     <link href="dataviz/proxima-nova/proxima-nova.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -81,6 +81,17 @@
     </nav>
 
 
+                  <div id=svgContainer data-iframe-width>
+                         <!-- <div id="svgContainerId">div#svgContainer</div> --> 
+                         <div id=loader>
+                            <div id=loaderContent0 style=display:none> <span style="font-size: 12px">This visualisation does not suppot Internet Explorer 7/8/9. For the best viewing experience, please use Google Chrome or another compatible browser such as Safari or Firefox.</span> </div>
+                            <div id=loaderContent1 style=display:none>
+                               <br><span style="font-size: 12px">Loading visualisation</span> 
+                               <div style="font-size: 14px; margin-top: 5px;"><i class="fa fa-spinner fa-spin"></i></div>
+                            </div>
+                         </div>
+                      </div>
+
     <!-- Header -->
     <a id="home"></a>
     <div class="intro-header">
@@ -104,16 +115,7 @@
                         </ul>
                     </div>-->
 
-                      <div id=svgContainer data-iframe-width>
-                         <!-- <div id="svgContainerId">div#svgContainer</div> --> 
-                         <div id=loader>
-                            <div id=loaderContent0 style=display:none> <span style="font-size: 12px">This visualisation does not suppot Internet Explorer 7/8/9. For the best viewing experience, please use Google Chrome or another compatible browser such as Safari or Firefox.</span> </div>
-                            <div id=loaderContent1 style=display:none>
-                               <br><span style="font-size: 12px">Loading visualisation</span> 
-                               <div style="font-size: 14px; margin-top: 5px;"><i class="fa fa-spinner fa-spin"></i></div>
-                            </div>
-                         </div>
-                      </div>
+                    
                 </div>
             </div>
 
@@ -184,16 +186,9 @@
 
  
  <!--SCRIPTS START-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src=dataviz/scripts/vendor.js></script>
 <script src=dataviz/scripts/main.js></script> 
 <script src=scripts/iframe-resizer_3.5.15/js/www_subdomain/iframeResizer.contentWindow.min.js></script>
-
-<script type="text/javascript">
-  $("#go").leanModal();
-  $("#news").leanModal();
-</script>
-
 
 
 <script>
