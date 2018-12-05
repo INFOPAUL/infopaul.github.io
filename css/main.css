@@ -243,3 +243,11 @@ p.copyright {
     background: #000;
     display: none;
 }
+
+#svgContainer, #svgContainer0 {
+    background-color: #FFF;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    display: block;
+}
