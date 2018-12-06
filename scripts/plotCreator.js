@@ -5,6 +5,8 @@ var margin = {top: 30, right: 20, bottom: 30, left: 50},
     height = 270 - margin.top - margin.bottom;
 
 
+		var x = d3.scaleLinear().range([0, width]);
+		var y = d3.scaleLinear().range([height, 0]);
     
 // Adds the svg canvas
 var svg = d3.select("body")
@@ -39,8 +41,6 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
 		var minValue = d3.min(data, function(d) { return d.value;} );
 
 
-		var x = d3.scaleLinear().range([minKey, maxKey]);
-		var y = d3.scaleLinear().range([minValue, maxValue]);
 
 
 		// Define the line
