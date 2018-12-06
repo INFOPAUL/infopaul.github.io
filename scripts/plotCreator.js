@@ -33,8 +33,8 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
   	 // Set the ranges
 		var maxKey = d3.max(data, function(d) { return +d.key;} );
 		var maxValue = d3.max(data, function(d) { return d.value;} );
-		var minKey = d3.max(data, function(d) { return +d.key;} );
-		var minValue = d3.max(data, function(d) { return d.value;} );
+		var minKey = d3.min(data, function(d) { return +d.key;} );
+		var minValue = d3.min(data, function(d) { return d.value;} );
 
 
 		var x = d3.scaleLinear().range([minKey, maxKey]);
