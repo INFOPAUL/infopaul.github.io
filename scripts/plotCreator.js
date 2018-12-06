@@ -12,8 +12,12 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // Define the line
 var valueline = d3.line()
-    .x(function(d) { return x(d.key); })
-    .y(function(d) { return y(d.value); });
+    .x(function(d) { 
+    	return x(d.key); 
+    })
+    .y(function(d) { 
+    	return y(d.value); 
+    });
     
 // Adds the svg canvas
 var svg = d3.select("body")
@@ -43,7 +47,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       // Add the valueline path.
       svg.append("path")
           .attr("class", "line")
-          .attr("d", valueline);	
+          .attr("d", valueline());	
       // Add the scatterplot
       /*svg.selectAll("dot")
           .data(data)
