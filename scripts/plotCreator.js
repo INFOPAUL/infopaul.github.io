@@ -53,8 +53,8 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
     	})
         .curve(d3.curveMonotoneX);
       // Scale the range of the data
-      x.domain(d3.extent(data, function(d) { return d.key; }));
-      y.domain([0, d3.max(data, function(d) { return d.value; })]);	
+      x.domain([minKey, maxKey]);
+      y.domain([minValue, maxValue]);	
       // Add the valueline path.
       svg.append("path")
           .data([data])
