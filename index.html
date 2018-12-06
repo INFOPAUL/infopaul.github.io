@@ -37,17 +37,6 @@
 
 <body>
 
-      <div id=svgContainer data-iframe-width>
-         <!-- <div id="svgContainerId">div#svgContainer</div> --> 
-         <div id=loader>
-            <div id=loaderContent0 style=display:none> <span style="font-size: 12px">This visualisation does not suppot Internet Explorer 7/8/9. For the best viewing experience, please use Google Chrome or another compatible browser such as Safari or Firefox.</span> </div>
-            <div id=loaderContent1 style=display:none>
-               <br><span style="font-size: 12px">Loading visualisation</span> 
-               <div style="font-size: 14px; margin-top: 5px;"><i class="fa fa-spinner fa-spin"></i></div>
-            </div>
-         </div>
-      </div>
-
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -127,7 +116,7 @@
     </div>
     <!-- /.intro-header -->
 
-
+    <iframe id="unhcr_popstats_embed" style="border: none; height: 1052.3px;" src="http://popstats.unhcr.org/dataviz/index.html" width="100%" onload="javascript:iframeResize();"></iframe>
 
 
 
@@ -209,3 +198,6 @@ $(document).ready(function(){
  <!--SCRIPTS END-->
 
 
+</body>
+
+</html>
