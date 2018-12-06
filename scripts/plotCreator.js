@@ -1,8 +1,8 @@
 function drawChart() {
  // Set the dimensions of the canvas / graph
-var margin = {top: 30, right: 20, bottom: 30, left: 50},
-    width = 600 - margin.left - margin.right,
-    height = 270 - margin.top - margin.bottom;
+var margin = {top: 30, right: 20, bottom: 30, left: 100},
+    width = 900 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
 
 
 		var x = d3.scaleLinear().range([0, width]);
