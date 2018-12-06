@@ -30,7 +30,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
   				 .entries(data);	
 
  		data.forEach(x => {
-            x.year = +x.key;
+            x.key = +x.key;
         });
   	 // Set the ranges
 		var maxKey = d3.max(data, function(d) { return d.key;} );
