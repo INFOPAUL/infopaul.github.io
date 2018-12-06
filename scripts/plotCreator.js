@@ -51,7 +51,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
     		.y(function(d) { 
     		return y(d.value); 
     	})
-        .curve(d3.curveMonotoneX);
+        //.curve(d3.curveMonotoneX);
       // Scale the range of the data
       x.domain([minKey, maxKey]);
       y.domain([minValue, maxValue]);	
