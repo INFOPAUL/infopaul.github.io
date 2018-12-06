@@ -48,7 +48,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       svg.append("path")
           .data([data])
           .attr("class", "line")
-          .attr("d", valueline;	
+          .attr("d", valueline);	
       // Add the scatterplot
       /*svg.selectAll("dot")
           .data(data)
