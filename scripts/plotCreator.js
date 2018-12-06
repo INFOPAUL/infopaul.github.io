@@ -9,10 +9,6 @@ var margin = {top: 30, right: 20, bottom: 30, left: 50},
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
-// Define the axes
-var xAxis = d3.axisBottom(x).ticks(5);
-
-var yAxis = d3.axisLeft(y).ticks(5);
 
 // Define the line
 var valueline = d3.line()
@@ -34,6 +30,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json", function(error, data) {
         d.date = parseDate(d.date);
         d.close = +d.close;
     });*/
+  if (error) throw error;
 
     var data = d3.nest()
 				 .key(function(d) { 
@@ -55,26 +52,24 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json", function(error, data) {
     // Add the valueline path.
     svg.append("path")
         .attr("class", "line")
-        .attr("d", valueline(data));
+        .attr("d", valueline);
 
     // Add the scatterplot
-    svg.selectAll("dot")
+    /*svg.selectAll("dot")
         .data(data)
       .enter().append("circle")
         .attr("r", 3.5)
         .attr("cx", function(d) { return x(d.date); })
         .attr("cy", function(d) { return y(d.close); });
-
+*/
     // Add the X Axis
     svg.append("g")
-        .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(d3.axisBottom(x));
 
     // Add the Y Axis
     svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis);
+        .call(d3.axisLeft(y));
 
 	});
 
