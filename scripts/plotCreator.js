@@ -5,10 +5,6 @@ var margin = {top: 30, right: 20, bottom: 30, left: 50},
     height = 270 - margin.top - margin.bottom;
 
 
-// Set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
 
 // Define the line
 var valueline = d3.line()
@@ -41,6 +37,17 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
   						});
   				 })
   				 .entries(data);	
+
+
+  	 // Set the ranges
+		var maxKey = d3.max(data, function(d) { return d.key;} );
+		var maxValue = d3.max(data, function(d) { return d.value;} );
+		var minKey = d3.max(data, function(d) { return d.key;} );
+		var minValue = d3.max(data, function(d) { return d.value;} );
+
+
+		var x = d3.scaleLinear().range([minKey, maxKey]);
+		var y = d3.scaleLinear().range([minValue, maxValue]);
       // Scale the range of the data
       x.domain(d3.extent(data, function(d) { return d.key; }));
       y.domain([0, d3.max(data, function(d) { return d.value; })]);	
