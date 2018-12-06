@@ -18,10 +18,6 @@ var svg = d3.select("body")
 // Get the data
 d3.json("scripts/geo/data/UNHCR_Statistic.json")
   .then(function(data){
-
-  	   data = data.map(function (x) { 
- 			 x.year = parseInt(x.year); 
-        });
        data = d3.nest()
   				 .key(function(d) { 
   				 	return d.year;
@@ -35,9 +31,9 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
 
 
   	 // Set the ranges
-		var maxKey = d3.max(data, function(d) { return d.key;} );
+		var maxKey = d3.max(data, function(d) { return +d.key;} );
 		var maxValue = d3.max(data, function(d) { return d.value;} );
-		var minKey = d3.max(data, function(d) { return d.key;} );
+		var minKey = d3.max(data, function(d) { return +d.key;} );
 		var minValue = d3.max(data, function(d) { return d.value;} );
 
 
