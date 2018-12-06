@@ -18,9 +18,13 @@ var svg = d3.select("body")
 // Get the data
 d3.json("scripts/geo/data/UNHCR_Statistic.json")
   .then(function(data){
-      var data = d3.nest()
+
+  	   data = data.map(function (x) { 
+ 			 x.year = parseInt(x.year); 
+        });
+       data = d3.nest()
   				 .key(function(d) { 
-  				 	return +d.year;
+  				 	return d.year;
   				 })
   				 .rollup(function(d) { 
   					return d3.sum(d, function(g) {
