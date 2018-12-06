@@ -29,7 +29,7 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.json("geo/data/UNHCR_Statistic.json", function(error, data) {
+d3.json("scripts/geo/data/UNHCR_Statistic.json", function(error, data) {
     /*data.forEach(function(d) {
         d.date = parseDate(d.date);
         d.close = +d.close;
