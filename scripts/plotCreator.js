@@ -79,11 +79,11 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
 
 
       svg.selectAll(".dot")
-    .data(dataset)
+    .data(data)
   .enter().append("circle") // Uses the enter().append() method
     .attr("class", "dot") // Assign a class for styling
-    .attr("cx", function(d, i) { return xScale(i) })
-    .attr("cy", function(d) { return yScale(d.y) })
+    .attr("cx", function(d, i) { return x(d.key) })
+    .attr("cy", function(d) { return y(d.value) })
     .attr("r", 5)
       .on("mouseover", function(a, b, c) { 
   			console.log(a) 
