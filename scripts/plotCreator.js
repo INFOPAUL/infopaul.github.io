@@ -29,11 +29,13 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
   				 })
   				 .entries(data);	
 
-
+ 		data.forEach(x => {
+            x.year = +x.key;
+        });
   	 // Set the ranges
-		var maxKey = d3.max(data, function(d) { return +d.key;} );
+		var maxKey = d3.max(data, function(d) { return d.key;} );
 		var maxValue = d3.max(data, function(d) { return d.value;} );
-		var minKey = d3.min(data, function(d) { return +d.key;} );
+		var minKey = d3.min(data, function(d) { return d.key;} );
 		var minValue = d3.min(data, function(d) { return d.value;} );
 
 
