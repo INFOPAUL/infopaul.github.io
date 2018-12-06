@@ -19,9 +19,6 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!--<link href="dataviz/styles/vendor.css" rel="stylesheet" type="text/css">
-    <link href="dataviz/styles/main.css" rel="stylesheet" type="text/css">
-    <link href="dataviz/proxima-nova/proxima-nova.css" rel="stylesheet" type="text/css">-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="images/favicon.ico">
 
@@ -91,16 +88,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Autopilot</h1>
-                        <h3>Automatic steering, speed, lane changing and parking</h3>
+                        <h1>European refugee crisis</h1>
+                        <h3>Some cool quote</h3>
                         
                         <ul class="list-inline intro-social-buttons">
                             <hr class="intro-divider">
                             <li>
-                                <button  type="button" class="btn btn-danger btn-md" style="background:#CC0000;border-color:#CC0000;" onclick="javascript: document.getElementById('go').click();"><h4>Reserve test drive</h4></button>
-                            </li>
-                            <li>
-                               <button  type="button" style="background:#333333;border-color:#333333;" class="btn btn-danger btn-md" onclick="javascript:window.location.href = 'https://www.teslamotors.com/';"><h4>Open Tesla World</h4></button>
+                                <button  type="button" class="btn btn-danger btn-md w-200" style="background:#CC0000;border-color:#CC0000;" onclick="javascript: document.getElementById('go').click();"><h4>Learn more</h4></button>
                             </li>
                             
                         </ul>
@@ -117,20 +111,56 @@
     <!-- /.intro-header -->
 
 
+   <!--UN MAP STARTED-->
+   <div class="push-20 h-100">
+        <div class="container h-100">
+            <div class="row h-100">
+               <div class="h-100">
+                  <iframe id="unhcr_popstats_embed" style="border: none; height: 100%;" src="https://infopaul.bitbucket.io" width="100%"></iframe>
+               </div>
+            </div>
+        </div>
+   </div>
+   <!--UN MAP END-->
 
-   <div class="content-section-a" height="100%">
-        <div class="container" height="100%">
-            <div class="row" height="100%">
-               <div class="h-75">
-                  <iframe id="unhcr_popstats_embed" style="border: none; height: 75%;" src="https://infopaul.bitbucket.io" width="100%"></iframe>
+   <!--UN MAP DESCRIPTION STARTED-->
+   <div class="push-20">
+        <div class="container">
+            <div class="row">
                <div>
-               <div class="h-25">
                   Some text
-               <div>
+               </div>
+            </div>
+        </div>
+   </div>
+   <!--UN MAP DESCRIPTION END-->
+
+
+
+
+   <div class="content-section-a push-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">European Union refugee number statistics</h2>
+                    <p class="lead"> <!--<a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>-->Model X is able to achieve 
+                                257 miles               
+                                of range in part because it is the most aerodynamic SUV in production. At 0.24, Model X's drag coefficient is 20% lower than the next best SUV. In addition, an active spoiler deploys from the rear liftgate to optimize highway efficiency and stability.
+                        
+                        </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/aero.jpg" alt="">
+                </div>
             </div>
 
         </div>
-   </div>
+        <!-- /.container -->
+
+    </div>
+ 
 
    
 	
@@ -186,12 +216,9 @@
 
  
  <!--SCRIPTS START-->
-<!--<script src=dataviz/scripts/vendor.js></script>
-<script src=dataviz/scripts/main.js></script> 
-<script src=scripts/iframe-resizer_3.5.15/js/www_subdomain/iframeResizer.contentWindow.min.js></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
-
+<script src="scripts/plotCreator.js"></script>
 
 
 <script>
