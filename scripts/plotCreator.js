@@ -74,7 +74,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
           .call(d3.axisBottom(x));	
       // Add the Y Axis
       svg.append("g")
-          .call(d3.axisLeft(y));
+          .call(d3.axisLeft(y).tickFormat(function(d){return d/1000000 + " M"}););
 
 
 
@@ -110,7 +110,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       .on("mouseover", function() { focus.style("display", null); })
       .on("mouseout", function() { focus.style("display", "none"); })
       .on("mousemove", mousemove);
-      
+
   function mousemove() {
     var x0 = x.invert(d3.mouse(this)[0]),
         i = bisectDate(data, x0, 1),
