@@ -1,15 +1,15 @@
 function drawChart() {
  // Set the dimensions of the canvas / graph
-var margin = {top: 30, right: 20, bottom: 30, left: 100},
-    width = 900 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+var margin = {top: 30, right: 20, bottom: 30, left: 20},
+    width = 450 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 
 		var x = d3.scaleLinear().range([0, width]);
 		var y = d3.scaleLinear().range([height, 0]);
     
 // Adds the svg canvas
-var svg = d3.select("body")
+var svg = d3.select("#UNRefugeePlot")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
