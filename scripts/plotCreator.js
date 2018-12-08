@@ -1,7 +1,7 @@
 function drawChart() {
  // Set the dimensions of the canvas / graph
-var margin = {top: 30, right: 20, bottom: 30, left: 20},
-    width = 450 - margin.left - margin.right,
+var margin = {top: 30, right: 20, bottom: 30, left: 70},
+    width = 500 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
 
