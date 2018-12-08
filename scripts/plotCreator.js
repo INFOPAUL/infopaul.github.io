@@ -2,7 +2,7 @@ function drawChart() {
  // Set the dimensions of the canvas / graph
 var margin = {top: 30, right: 20, bottom: 30, left: 70},
     width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
 
 
 		var x = d3.scaleLinear().range([0, width]);
@@ -54,7 +54,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
         .curve(d3.curveMonotoneX);
       // Scale the range of the data
       x.domain([minKey, maxKey]);
-      y.domain([minValue, maxValue + 2000000]);	
+      y.domain([minValue, maxValue + 4000000]);	
       // Add the valueline path.
       svg.append("path")
           .data([data])
@@ -71,7 +71,9 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       // Add the X Axis
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).ticks(d3.format("d")));	
+          .call(d3.axisBottom(x).tickFormat(function(d){
+          	return d;
+          }));	
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
