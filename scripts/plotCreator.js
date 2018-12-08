@@ -71,11 +71,11 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       // Add the X Axis
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).ticks(d3.timeYear));	
+          .call(d3.axisBottom(x).ticks(d3.format("d")));	
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
-          	var res = (d/1000000).toFixed(2) + " M";
+          	var res = Math.round(d/1000000) + " M";
           	return res;
           }));
 
