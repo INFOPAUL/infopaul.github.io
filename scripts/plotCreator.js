@@ -75,7 +75,8 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
-          	return d.value/1000000 + " M"
+          	var res = d/1000000 + " M";
+          	return res;
           }));
 
          // Add the tooltip container to the vis container
@@ -87,11 +88,11 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
               // tooltip mouseover event handler
               var tipMouseover = function(d) {
                   var html  = "Year: " + d.key + "<br/>" +
-                              "Refugees: " + d.value;
+                              "Refugees: " + (d.value / 1000000) + " M";
 
                   tooltip.html(html)
                       .style("left", (d3.select(this).attr("cx") + 15) + "px")
-                      .style("top", (d3.select(this).attr("cy") - 28) + "px")
+                      .style("top", (d3.select(this).attr("cy") - 15) + "px")
                     .transition()
                       .duration(200) // ms
                       .style("opacity", .9) // started as 0!
