@@ -71,7 +71,7 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
       // Add the X Axis
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x));	
+          .call(d3.axisBottom(x).ticks(d3.timeYear));	
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
