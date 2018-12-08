@@ -74,7 +74,35 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
           .call(d3.axisBottom(x));	
       // Add the Y Axis
       svg.append("g")
-          .call(d3.axisLeft(y).tickFormat(function(d){return d/1000000 + " M"}));
+          .call(d3.axisLeft(y).tickFormat(function(d){return d.value/1000000 + " M"}));
+
+         // Add the tooltip container to the vis container
+              // it's invisible and its position/contents are defined during mouseover
+              var tooltip = d3.select("#UNRefugeePlot").append("div")
+                  .attr("class", "tooltip")
+                  .style("opacity", 0);
+
+              // tooltip mouseover event handler
+              var tipMouseover = function(d) {
+                  var html  = "Year: " + d.key + "<br/>" +
+                              "Refugees: " + d.value;
+
+                  tooltip.html(html)
+                      .style("left", (d3.event.pageX + 15) + "px")
+                      .style("top", (d3.event.pageY - 28) + "px")
+                    .transition()
+                      .duration(200) // ms
+                      .style("opacity", .9) // started as 0!
+
+              };
+              // tooltip mouseout event handler
+              var tipMouseout = function(d) {
+                  tooltip.transition()
+                      .duration(300) // ms
+                      .style("opacity", 0); // don't care about position!
+              };
+
+
 
 
 
@@ -85,11 +113,8 @@ d3.json("scripts/geo/data/UNHCR_Statistic.json")
     .attr("cx", function(d, i) { return x(d.key) })
     .attr("cy", function(d) { return y(d.value) })
     .attr("r", 5)
-      .on("mouseover", function(a, b, c) { 
-  			console.log(a) 
-        this.attr('class', 'focus')
-		})
-      .on("mouseout", function() {  })
+    .on("mouseover", tipMouseover)
+    .on("mouseout", tipMouseout);
 //      .on("mousemove", mousemove);
 //
 //  var focus = svg.append("g")
