@@ -4,7 +4,7 @@ var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		vizWidth = 500,
 		vizHeight = 450,
 		panelWidth = vizWidth - margin.left - margin.right,
-		panelHeight = vizHeight - margin.top - margin.bottom;
+		panelHeight = vizHeight - margin.top - margin.bottom - padding.top - padding.bottom;
 
 var viz = d3.select("#NumberOFNewsMap").append("svg")
 						.attr("class", "viz")
@@ -14,7 +14,7 @@ var viz = d3.select("#NumberOFNewsMap").append("svg")
 
 var panel = viz.append("g")
 		.attr("class","panel")
-    .attr("transform", "translate(" + 0 + "," + padding.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + (margin.top + padding.top) + ")");
 
 //button drawing
 //the class of the button is the what happened to the animation after you
