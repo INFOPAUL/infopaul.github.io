@@ -208,7 +208,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			.attr("step", 1)
 			.attr("width", panelWidth - buttonWidth)
     		.attr("height", buttonHeight)
-    		.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")");
+    		.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")")
 			.on("input", function() {
 				index = this.value;
 				tick();
