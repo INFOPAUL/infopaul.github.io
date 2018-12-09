@@ -3,21 +3,16 @@ var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		padding = {top: 50, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
 		vizWidth = 500,
 		vizHeight = 450,
-		plotWidth = vizWidth - margin.left - margin.right,
-		plotHeight = vizHeight - margin.top - margin.bottom,
-		panelWidth = plotWidth - padding.left - padding.right,
-		panelHeight = plotHeight - padding.top - padding.bottom;
+		panelWidth = vizWidth - margin.left - margin.right,
+		panelHeight = vizHeight - margin.top - margin.bottom;
 
 var viz = d3.select("#NumberOFNewsMap").append("svg")
 						.attr("class", "viz")
     				.attr("width", vizWidth)
     				.attr("height", vizHeight);
 
-var plot = viz.append("g")
-		.attr("class","plot")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var panel = plot.append("g")
+var panel = viz.append("g")
 		.attr("class","panel")
     .attr("transform", "translate(" + 0 + "," + padding.top + ")");
 
