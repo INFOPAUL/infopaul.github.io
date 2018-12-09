@@ -37,7 +37,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		.map(data);
 
 	countries.features.forEach(function(country) {
-		country.properties.years = dataByCountyByYear[country.iso_a3]
+		country.properties.years = dataByCountyByYear[country.properties.iso_a3]
 	});
 
 	var color = d3.scale.threshold()
@@ -130,9 +130,3 @@ update(1996);
 
 
 });
-
-function ready(error, data, eu) {
-
-	
-
-}
