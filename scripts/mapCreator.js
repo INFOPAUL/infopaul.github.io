@@ -41,14 +41,16 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		country.properties.years = dataByCountyByYear[country.properties.iso_a3]
 	});
 
-	var color = d3.scale.threshold()
+	var color = d3.scaleThreshold()
 		.domain([10, 12.5, 15, 17.5, 20, 22.5, 25])
 		.range(["#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"]);
 
-	var projection = d3.geo.albersUsa()
-		.translate([width / 2, height / 2]);
+	var projection = d3.geoMercator()
+	 							   .center([ 13, 52 ]) //comment centrer la carte, longitude, latitude
+								   .translate([ width/2, height/2 ]) // centrer l'image obtenue dans le svg
+								   .scale([ width/1.5 ]); // zoom, plus la valeur est petit plus le zoom est gros 
 
-	var path = d3.geo.path()
+	var path = d3.geoPath()
 		.projection(projection);
 
 	var countyShapes = svg.selectAll(".county")
