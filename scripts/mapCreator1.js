@@ -2,7 +2,7 @@
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		padding = {top: 50, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
 		vizWidth = 500,
-		vizHeight = 450,
+		vizHeight = 650,
 		panelWidth = vizWidth,
 		panelHeight = vizHeight - margin.top - margin.bottom - padding.top - padding.bottom;
 
