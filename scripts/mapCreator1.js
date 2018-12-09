@@ -56,8 +56,8 @@ var currYear = viz.append("text")
 
 //Tooltip drawing
 function drawTooltip(d,currYear) {
-		var xPosition = d3.event.pageX;
-    var yPosition = d3.event.pageY;
+		var xPosition = (d3.select(this).attr("cx");
+    var yPosition = (d3.select(this).attr("cy");
 
 		d3.select("#tooltip")
 			.classed("hidden",false)
