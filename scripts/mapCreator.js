@@ -33,6 +33,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 	});*/
 
 	var dataByCountyByYear = d3.nest()
+		.key(function(d) { return d.ISO; })
 		.key(function(d) { return d.year_MENTIONS; })
 		.map(data);
 
