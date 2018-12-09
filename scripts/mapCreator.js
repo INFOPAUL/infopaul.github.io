@@ -112,7 +112,13 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		slider.property("value", year);
 		d3.select(".year").text(year);
 		countyShapes.style("fill", function(d) {
-			return color(d.properties.years.find(x=> x.year_MENTIONS == year).Number)
+			var col = 0;
+			if(d.properties.years != null)
+			{
+				var num = d.properties.years.find(x=> x.year_MENTIONS == year);
+				col = num == null ? 0: num.Number;
+			}
+			return color(col)
 		});
 	}
 
