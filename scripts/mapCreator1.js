@@ -137,7 +137,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	var getColor  = d3.scaleSequential(d3.interpolateYlOrRd)
 										.domain([minPop,maxPop]);
 
-	var projection = d3.geoMercator().fitSize([panelWidth,panelHeight],sg),
+	var projection = d3.geoMercator().fitSize([panelWidth,panelHeight],eu),
 			geoPath = d3.geoPath(projection);
 
 	var areas = panel.selectAll("path")
