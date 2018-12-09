@@ -81,7 +81,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		});
 
 	svg.append("path")
-		.datum(topojson.feature(us, us.objects.states, function(a, b) { return a !== b; }))
+		.datum(topojson.feature(eu, eu.objects.europe, function(a, b) { return a !== b; }))
 			.attr("class", "states")
 			.attr("d", path);
 
