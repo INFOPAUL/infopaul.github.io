@@ -13,18 +13,18 @@ tooltip = d3.select("#NumberOFNewsMap").append("div")
 	.attr("class", "tooltip")
 	.style("opacity", 0);
 
-queue()
-	.defer(d3.json, "scripts/data/mentions.json")
-	.defer(d3.json, "scripts/data/eu.topojson")
-	.await(ready);
-
 var legendText = ["", "10%", "", "15%", "", "20%", "", "25%"];
 var legendColors = ["#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"];
 
 
-function ready(error, data, eu) {
+var files = ["scripts/data/mentions.json", "scripts/data/eu.topojson"];
 
-	var countries = topojson.feature(eu, eu.objects.europe);
+Promise.all(files.map(url => d3.json(url))).then(function(values) {
+
+    var data = values[0];
+    var eu = values[1];
+
+var countries = topojson.feature(eu, eu.objects.europe);
 
 	/*data.forEach(function(d) {
 		d.year = +d.year;
@@ -126,5 +126,13 @@ function ready(error, data, eu) {
 			});
 
 update(1996);
+
+
+
+});
+
+function ready(error, data, eu) {
+
+	
 
 }
