@@ -123,7 +123,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
 
 	
-		var numbers = data.map(x=>x.Numbers);
+		var numbers = data.map(x=>x.Number);
 		var	maxPop = d3.max(numbers);
 		var	minPop = d3.min(numbers);
 
