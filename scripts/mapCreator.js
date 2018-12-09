@@ -34,11 +34,10 @@ var countries = topojson.feature(eu, eu.objects.europe);
 
 	var dataByCountyByYear = d3.nest()
 		.key(function(d) { return d.ISO; })
-		.key(function(d) { return d.year_MENTIONS; })
 		.map(data);
 
 	countries.features.forEach(function(country) {
-		country.properties.years = dataByCountyByYear[country.properties.iso_a3]
+		country.properties.years = dataByCountyByYear.get(country.properties.iso_a3)
 	});
 
 	var color = d3.scaleThreshold()
@@ -113,7 +112,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		slider.property("value", year);
 		d3.select(".year").text(year);
 		countyShapes.style("fill", function(d) {
-			return color(d.properties.years[year][0].Number)
+			return color(d.properties.years.find(x=> x.year_MENTIONS == year).Number)
 		});
 	}
 
