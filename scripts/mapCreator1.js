@@ -1,8 +1,8 @@
 // Margin Convention
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		padding = {top: 0, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
-		vizWidth = 960,
-		vizHeight = 500,
+		vizWidth = 500,
+		vizHeight = 450,
 		plotWidth = vizWidth - margin.left - margin.right,
 		plotHeight = vizHeight - margin.top - margin.bottom,
 		panelWidth = plotWidth - padding.left - padding.right,
