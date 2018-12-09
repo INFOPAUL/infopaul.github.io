@@ -199,10 +199,10 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
 	var slider = viz.append("g")
 						.attr("class", "slider")
-						.attr("width", panelWidth - buttonWidth)
-    					.attr("height", buttonHeight)
     					.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")")
 					.append("input")
+						.attr("width", panelWidth - buttonWidth)
+    					.attr("height", buttonHeight)
 						.attr("type", "range")
 						.attr("min", 0)
 						.attr("max", years.length - 1)
