@@ -1,6 +1,6 @@
 // Margin Convention
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
-		padding = {top: 50, right: 0, bottom: 50, left: 0}, //left padding for button, bottom padding for legend
+		padding = {top: 50, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
 		vizWidth = 500,
 		vizHeight = 450,
 		plotWidth = vizWidth - margin.left - margin.right,
@@ -19,7 +19,7 @@ var plot = viz.append("g")
 
 var panel = plot.append("g")
 		.attr("class","panel")
-    .attr("transform", "translate(" + padding.left + "," + padding.top + ")");
+    .attr("transform", "translate(" + 0 + "," + padding.top + ")");
 
 //button drawing
 //the class of the button is the what happened to the animation after you
