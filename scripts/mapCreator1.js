@@ -70,7 +70,7 @@ function drawTooltip(d,currYear) {
 }
 
 // Legend Drawing
-var legendWidth = panelWidth/2, legendHeight = 10;
+var legendWidth = panelWidth, legendHeight = 10;
 
 var legend = viz.append("g")
 								.classed("legend",true)
@@ -187,7 +187,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}*/
 
 
-        function tick() {
+        function tick(timer) {
 			if(index < years.length){
 					console.log(index);
 					updateColor(index);
@@ -196,7 +196,8 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 				} else{
 					index -= 1; //hard coding for tooltips to make sense
 					console.log(index);
-					timer.stop();
+					if(timer)
+						timer.stop();
 					updateButton("reset");
 				}    
 	}
@@ -226,7 +227,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			timer = d3.interval(function(elapsed){
 				console.log(elapsed);
 				index +=1;
-				tick();
+				tick(timer);
 				},500);
 		}else if(button.classed("pause")){
 			button.classed("pause",false);
