@@ -200,7 +200,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}
 
 
-	var slider = viz.append("div")
+	var slider = viz.append("g")
 						.attr("class", "slider")
 						.attr("width", panelWidth - buttonWidth)
     					.attr("height", buttonHeight)
