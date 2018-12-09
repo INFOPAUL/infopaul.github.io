@@ -15,7 +15,7 @@ var viz = d3.select("#NumberOFNewsMap").append("svg")
 var panel = viz.append("g")
 		.attr("class","panel")
 		.attr("width", panelWidth)
-    	.attr("height", panelHeight);
+    	.attr("height", panelHeight)
     .attr("transform", "translate(" + 0 + "," + (margin.top + padding.top) + ")");
 
 //button drawing
