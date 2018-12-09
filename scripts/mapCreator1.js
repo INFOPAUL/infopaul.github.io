@@ -99,6 +99,8 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
     var data = values[0];
     var eu = values[1];
 
+
+    eu = topojson.feature(eu, eu.objects.europe);
     var dataByCountry = d3.nest()
 		.key(function(d) { return d.ISO; })
 		.map(data);
