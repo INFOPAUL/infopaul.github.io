@@ -18,7 +18,7 @@ var svg = d3.select("#UNRefugeePlot")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.json("scripts/geo/data/UNHCR_Statistic.json")
+d3.json("scripts/data/UNHCR_Statistic.json")
   .then(function(data){
        data = d3.nest()
   				 .key(function(d) { 
