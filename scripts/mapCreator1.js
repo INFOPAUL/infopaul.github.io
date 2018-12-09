@@ -104,7 +104,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		.map(data);
 
 	eu.objects.europe.geometries.forEach(function(country) {	 
-	     var mentions = dataByCountyByYear.get(country.properties.iso_a3);
+	     var mentions = dataByCountry.get(country.properties.iso_a3);
 	     mentions.forEach(function(mention) {
          		country.properties[mention.year_MENTIONS] = mention.Number;
 	     });
