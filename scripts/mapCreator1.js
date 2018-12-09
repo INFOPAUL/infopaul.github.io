@@ -66,7 +66,7 @@ function drawTooltip(d,currYear) {
 			.classed("hidden",false)
 			.style("left", xPosition + "px")
 			.style("top", yPosition + "px")
-			.html(d.properties.PA + "<br>"+ d.properties[currYear]);
+			.html(d.properties.name + "<br>"+ d.properties[currYear]);
 }
 
 // Legend Drawing
@@ -74,7 +74,7 @@ var legendWidth = panelWidth/2, legendHeight = 10;
 
 var legend = viz.append("g")
 								.classed("legend",true)
-								.attr("transform", "translate(" + (margin.left +panelWidth/4)
+								.attr("transform", "translate(" + (margin.left +panelWidth/2)
 								+ "," + (margin.top+panelHeight + margin.top) + ")")
 
 legend.append("rect")
@@ -177,6 +177,29 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}
 
 	console.log(years.length);
+
+	/*function update(year){
+		slider.property("value", year);
+		d3.select(".year").text(year);
+		countyShapes.style("fill", function(d) {
+			return color(d.properties.years[year][0].rate)
+		});
+	}*/
+
+	var slider = d3.select("#NumberOFNewsMap").append(".slider")
+		.append("input")
+			.attr("type", "range")
+			.attr("min", d3.min(years))
+			.attr("max", d3.max(years))
+			.attr("step", 1)
+			.on("input", function() {
+				index += 1;
+				console.log(index);
+					updateColor(index);
+					updateButton("pause");
+					updateCurrYear(index);
+			});
+
 
 	button.on("click",function(){
 		if(button.classed("reset")){
