@@ -111,7 +111,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 		slider.property("value", year);
 		d3.select(".year").text(year);
 		countyShapes.style("fill", function(d) {
-			return color(d.properties.years[year][0].rate)
+			return color(d.properties.years[year][0].Number)
 		});
 	}
 
@@ -126,7 +126,7 @@ var countries = topojson.feature(eu, eu.objects.europe);
 				update(year);
 			});
 
-update(1996);
+update(2015);
 
 
 
