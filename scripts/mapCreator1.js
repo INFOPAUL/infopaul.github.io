@@ -1,6 +1,6 @@
 // Margin Convention
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
-		padding = {top: 0, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
+		padding = {top: 50, right: 0, bottom: 50, left: 0}, //left padding for button, bottom padding for legend
 		vizWidth = 500,
 		vizHeight = 450,
 		plotWidth = vizWidth - margin.left - margin.right,
@@ -74,8 +74,8 @@ var legendWidth = panelWidth, legendHeight = 10;
 
 var legend = viz.append("g")
 								.classed("legend",true)
-								.attr("transform", "translate(" + (margin.left +panelWidth/2)
-								+ "," + (margin.top+panelHeight + margin.top) + ")")
+								.attr("transform", "translate(" + margin.left
+								+ "," + (margin.top+panelHeight + padding.top) + ")")
 
 legend.append("rect")
 			.attr("width", legendWidth)
