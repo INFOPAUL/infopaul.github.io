@@ -186,20 +186,32 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		});
 	}*/
 
-	var slider = d3.select("#NumberOFNewsMap").append("div").attr("class", "slider")
-		.append("input")
-			.attr("type", "range")
-			.attr("min", d3.min(years))
-			.attr("max", d3.max(years))
-			.attr("step", 1)
-			.on("input", function() {
-				index += 1;
-				console.log(index);
+
+        function tick() {
+			if(index < years.length){
+					console.log(index);
 					updateColor(index);
 					updateButton("pause");
 					updateCurrYear(index);
-			});
+				} else{
+					index -= 1; //hard coding for tooltips to make sense
+					console.log(index);
+					timer.stop();
+					updateButton("reset");
+				}    
+	}
 
+
+	var slider = d3.select("#NumberOFNewsMap").append("div").attr("class", "slider")
+		.append("input")
+			.attr("type", "range")
+			.attr("min", d3.min(0))
+			.attr("max", d3.max(years.length))
+			.attr("step", 1)
+			.on("input", function() {
+				index = this.value;
+				tick();
+			});
 
 	button.on("click",function(){
 		if(button.classed("reset")){
@@ -214,17 +226,8 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			timer = d3.interval(function(elapsed){
 				console.log(elapsed);
 				index +=1;
-				if(index < years.length){
-					console.log(index);
-					updateColor(index);
-					updateButton("pause");
-					updateCurrYear(index);
-				} else{
-					index -= 1; //hard coding for tooltips to make sense
-					console.log(index);
-					timer.stop();
-					updateButton("reset");
-				}},500);
+				tick();
+				},500);
 		}else if(button.classed("pause")){
 			button.classed("pause",false);
 			timer.stop();
