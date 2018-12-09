@@ -122,15 +122,10 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
 
 
-	var allPop = eu.features.map(
-		function(obj,ind){
-			var pop = Object.assign({},obj.properties)//make a deep copy
-			delete pop.PA
-			return Object.values(pop)
-		})
-	var allPop = [].concat.apply([], allPop),
-			maxPop = d3.max(allPop),
-			minPop = d3.min(allPop);
+	
+		var numbers = data.map(x=>x.Numbers);
+		var	maxPop = d3.max(numbers);
+		var	minPop = d3.min(numbers);
 
 	var mapToOne = d3.scaleLinear()
 									.range([0,1])
