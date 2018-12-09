@@ -105,7 +105,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		.key(function(d) { return d.ISO; })
 		.map(data);
 
-	eu.objects.europe.geometries.forEach(function(country) {	 
+	eu.features.forEach(function(country) {	 
 	     var mentions = dataByCountry.get(country.properties.iso_a3);
 	     if(mentions)
 	     {
@@ -122,7 +122,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
 
 
-	var allPop = eu.objects.europe.geometries.map(
+	var allPop = eu.features.map(
 		function(obj,ind){
 			var pop = Object.assign({},obj.properties)//make a deep copy
 			delete pop.PA
@@ -143,7 +143,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			geoPath = d3.geoPath(projection);
 
 	var areas = panel.selectAll("path")
-										.data(eu.objects.europe.geometries)
+										.data(eu.features)
 										.enter()
 										.append("path")
 												.attr("d",geoPath)
