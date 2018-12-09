@@ -200,12 +200,15 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}
 
 
-	var slider = d3.select("#NumberOFNewsMap").append("div").attr("class", "slider")
+	var slider = viz.append("div").attr("class", "slider")
 		.append("input")
 			.attr("type", "range")
 			.attr("min", 0)
 			.attr("max", years.length - 1)
 			.attr("step", 1)
+			.attr("width", panelWidth - buttonWidth)
+    		.attr("height", buttonHeight)
+    		.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")");
 			.on("input", function() {
 				index = this.value;
 				tick();
