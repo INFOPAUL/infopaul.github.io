@@ -1,0 +1,7 @@
+#button{
+	cursor: pointer;
+	background-color: :white;
+}
+#button:hover{
+	background-color: : grey;
+}

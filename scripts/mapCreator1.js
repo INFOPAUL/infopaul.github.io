@@ -33,8 +33,8 @@ button.append("rect")
 			.attr("height",buttonHeight)
 			.attr("width",buttonWidth)
 			.attr("fill","white")
-			.on("mouseover",function(){d3.select(this).attr("fill","grey")})
-			.on("mouseout",function(){d3.select(this).attr("fill","white")})
+			//.on("mouseover",function(){d3.select(this).attr("fill","grey")})
+			//.on("mouseout",function(){d3.select(this).attr("fill","white")})
 			.style("stroke","black");
 
 
@@ -197,7 +197,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}
 
 
-	var slider = viz.append("g")
+	/*var slider = viz.append("g")
 						.attr("class", "slider")
     					.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")")
 					.append("input")
@@ -210,7 +210,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 						.on("input", function() {
 							index = this.value;
 							tick();
-						});
+						});*/
 
 	button.on("click",function(){
 		if(button.classed("reset")){
