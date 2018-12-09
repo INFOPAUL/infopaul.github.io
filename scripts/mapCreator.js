@@ -14,7 +14,7 @@ tooltip = d3.select("#NumberOFNewsMap").append("div")
 	.style("opacity", 0);
 
 queue()
-	.defer(d3.csv, "scripts/data/mentions.csv")
+	.defer(d3.json, "scripts/data/mentions.json")
 	.defer(d3.json, "scripts/data/eu.topojson")
 	.await(ready);
 
