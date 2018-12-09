@@ -120,7 +120,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
 
 
-	var allPop = sg.features.map(
+	var allPop = eu.objects.europe.geometries.map(
 		function(obj,ind){
 			var pop = Object.assign({},obj.properties)//make a deep copy
 			delete pop.PA
@@ -141,7 +141,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			geoPath = d3.geoPath(projection);
 
 	var areas = panel.selectAll("path")
-										.data(sg.features)
+										.data(eu.objects.europe.geometries)
 										.enter()
 										.append("path")
 												.attr("d",geoPath)
