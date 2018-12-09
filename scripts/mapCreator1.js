@@ -56,10 +56,13 @@ var currYear = viz.append("text")
 
 //Tooltip drawing
 function drawTooltip(d,currYear) {
+	var matrix = this.getScreenCTM()
+        .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
+
 		d3.select("#tooltip")
 			.classed("hidden",false)
-			.style("left", (d3.select(this).attr("cx") + 15) + "px")
-            .style("top", (d3.select(this).attr("cy") - 15) + "px")
+			.style("left", (window.pageXOffset + matrix.e + 15) + "px")
+            .style("top", (window.pageYOffset + matrix.f - 15) + "px")
 			.html(d.properties.name + "<br>"+ d.properties[currYear]);
 }
 
