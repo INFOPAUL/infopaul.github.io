@@ -186,7 +186,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		});
 	}*/
 
-	var slider = d3.select("#NumberOFNewsMap").append(".slider")
+	var slider = d3.select("#NumberOFNewsMap").append("div").attr("class", "slider")
 		.append("input")
 			.attr("type", "range")
 			.attr("min", d3.min(years))
