@@ -1,20 +1,90 @@
-var margin = {top: 20, right: 20, bottom: 20, left: 20};
-	width = 800 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom,
-	formatPercent = d3.format(".1%");
+// Margin Convention
+var margin = {top: 20, right: 20, bottom: 20, left: 20},
+		padding = {top: 50, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
+		vizWidth = 500,
+		vizHeight = 650,
+		panelWidth = vizWidth - margin.left - margin.right,
+		panelHeight = vizHeight - margin.top - margin.bottom - padding.top - padding.bottom;
 
-var svg = d3.select("#NumberOFNewsMap").append("svg")
-	.attr("width", width + margin.left + margin.right)
-	.attr("height", height + margin.top + margin.bottom)
-	.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var viz = d3.select("#NumberOFNewsMap").append("svg")
+						.attr("class", "viz")
+    				.attr("width", vizWidth)
+    				.attr("height", vizHeight);
 
-tooltip = d3.select("#NumberOFNewsMap").append("div")
-	.attr("class", "tooltip")
-	.style("opacity", 0);
 
-var legendText = ["", "10%", "", "15%", "", "20%", "", "25%"];
-var legendColors = ["#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"];
+var panel = viz.append("g")
+		.attr("class","panel")
+		.attr("width", panelWidth)
+    	.attr("height", panelHeight)
+    .attr("transform", "translate(" + margin.right + "," + (margin.top) + ")");
+
+//button drawing
+//the class of the button is the what happened to the animation after you
+//press the button
+var buttonHeight = 20, buttonWidth = padding.left;
+
+var button = viz.append("g")
+								.attr("id","button")
+								.classed("play",true)
+								.attr("transform", "translate(" + margin.left + "," +
+											margin.top + ")");
+
+button.append("rect")
+			.attr("height",buttonHeight)
+			.attr("width",buttonWidth)
+			.attr("fill","white")
+			//.on("mouseover",function(){d3.select(this).attr("fill","grey")})
+			//.on("mouseout",function(){d3.select(this).attr("fill","white")})
+			.style("stroke","black");
+
+
+button.append("text")
+			.attr("x",buttonWidth/2)
+			.attr("y",buttonHeight/2)
+			.attr("text-anchor","middle")
+			.attr("alignment-baseline","central")
+			.text("PLAY") //since the starting class is play
+
+//show the year the choropleth correspond to
+var currYear = viz.append("text")
+										.attr("transform","translate("+margin.left+","
+										+(margin.top+buttonHeight) + ")")
+										.attr("x",buttonWidth/2)
+										.attr("y",buttonHeight/2)
+										.attr("text-anchor","middle")
+										.attr("alignment-baseline","central")
+
+//Tooltip drawing
+function drawTooltip(d,currYear) {
+
+		d3.select("#tooltip")
+			.classed("hidden",false)
+			.style("left", d + "px")
+            .style("top", d + "px")
+			.html(d.properties.name + "<br>"+ d.properties[currYear]);
+}
+
+// Legend Drawing
+var legendWidth = panelWidth, legendHeight = 10;
+
+var legend = viz.append("g")
+								.classed("legend",true)
+								.attr("transform", "translate(" + margin.left
+								+ "," + (margin.top+panelHeight) + ")")
+
+legend.append("rect")
+			.attr("width", legendWidth)
+			.attr("height", legendHeight)
+			.attr("fill","white")
+			.style("stroke","black")
+
+legend.append("image")
+			.attr("transform", "translate(" + 0.5 +","+0.5+")")
+			.attr("id","legendRect")
+			.attr("xlink:href", "images/YlOrRd.png")
+			.attr("preserveAspectRatio","none")
+			.attr("width", legendWidth-1)
+			.attr("height", legendHeight-1)
 
 
 var files = ["scripts/data/mentions.json", "scripts/data/eu.topojson"];
@@ -24,117 +94,144 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
     var data = values[0];
     var eu = values[1];
 
-var countries = topojson.feature(eu, eu.objects.europe);
 
-	/*data.forEach(function(d) {
-		d.year = +d.year;
-		d.fips = +d.fips;
-		d.rate = +d.rate;
-	});*/
-
-	var dataByCountyByYear = d3.nest()
+    eu = topojson.feature(eu, eu.objects.europe);
+    var dataByCountry = d3.nest()
 		.key(function(d) { return d.ISO; })
 		.map(data);
 
-	countries.features.forEach(function(country) {
-		country.properties.years = dataByCountyByYear.get(country.properties.iso_a3)
+	eu.features.forEach(function(country) {	 
+	     var mentions = dataByCountry.get(country.properties.iso_a3);
+	     if(mentions)
+	     {
+	    		 mentions.forEach(function(mention) {
+         				country.properties[mention.year_MENTIONS] = mention.Number;
+	     		});
+		 }
 	});
 
-	var color = d3.scaleThreshold()
-		.domain([10, 12.5, 15, 17.5, 20, 22.5, 25])
-		.range(["#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"]);
+   	var years = data.map(x=>x.year_MENTIONS).filter((v, i, a) => a.indexOf(v) === i); 
+	var index = 0;
 
-	var projection = d3.geoMercator()
-	 							   .center([ 13, 52 ]) //comment centrer la carte, longitude, latitude
-								   .translate([ width/2, height/2 ]) // centrer l'image obtenue dans le svg
-								   .scale([ width/1.5 ]); // zoom, plus la valeur est petit plus le zoom est gros 
+	currYear.text(years[index]);
 
-	var path = d3.geoPath()
-		.projection(projection);
 
-	var countyShapes = svg.selectAll(".county")
-		.data(countries.features)
-		.enter()
-		.append("path")
-			.attr("class", "county")
-			.attr("d", path);
 
-	countyShapes
-		.on("mouseover", function(d) {
-			tooltip.transition()
-			.duration(250)
-			.style("opacity", 1);
-			tooltip.html(
-			"<p><strong>" + d.properties.years[1996][0].county + ", " + d.properties.years[1996][0].state + "</strong></p>" +
-			"<table><tbody><tr><td class='wide'>Smoking rate in 1996:</td><td>" + formatPercent((d.properties.years[1996][0].rate)/100) + "</td></tr>" +
-			"<tr><td>Smoking rate in 2012:</td><td>" + formatPercent((d.properties.years[2012][0].rate)/100) + "</td></tr>" +
-			"<tr><td>Change:</td><td>" + formatPercent((d.properties.years[2012][0].rate-d.properties.years[1996][0].rate)/100) + "</td></tr></tbody></table>"
-			)
-			.style("left", (d3.event.pageX + 15) + "px")
-			.style("top", (d3.event.pageY - 28) + "px");
-		})
-		.on("mouseout", function(d) {
-			tooltip.transition()
-			.duration(250)
-			.style("opacity", 0);
-		});
+	
+		var numbers = data.map(x=>x.Number);
+		var	maxPop = d3.max(numbers);
+		var	minPop = d3.min(numbers);
 
-	svg.append("path")
-		.datum(topojson.feature(eu, eu.objects.europe, function(a, b) { return a !== b; }))
-			.attr("class", "states")
-			.attr("d", path);
+	var mapToOne = d3.scaleLinear()
+									.range([0,1])
+									.domain([minPop,maxPop])
 
-	var legend = svg.append("g")
-		.attr("id", "legend");
+	var getColor  = d3.scaleSequential(d3.interpolateYlOrRd)
+										.domain([minPop,maxPop]);
 
-	var legenditem = legend.selectAll(".legenditem")
-		.data(d3.range(8))
-		.enter()
-		.append("g")
-			.attr("class", "legenditem")
-			.attr("transform", function(d, i) { return "translate(" + i * 31 + ",0)"; });
+	var projection = d3.geoMercator().fitSize([panelWidth,panelHeight],eu),
+			geoPath = d3.geoPath(projection);
 
-	legenditem.append("rect")
-		.attr("x", width - 240)
-		.attr("y", -7)
-		.attr("width", 30)
-		.attr("height", 6)
-		.attr("class", "rect")
-		.style("fill", function(d, i) { return legendColors[i]; });
+	var areas = panel.selectAll("path")
+										.data(eu.features)
+										.enter()
+										.append("path")
+												.attr("d",geoPath)
+												.classed("area",true)
+												.style("fill",function(d){
+													return getColor(d.properties[years[index]]);})
+												.on('mouseover', function(d) {
+													d3.select(this).classed("highlight",true);
+													drawTooltip(d,years[index]);}) // call tooltip function
+												.on('mouseout',function(){
+													d3.select("#tooltip").classed("hidden", true);
+													d3.select(this).classed("highlight",false);
+												});
 
-	legenditem.append("text")
-		.attr("x", width - 240)
-		.attr("y", -10)
-		.style("text-anchor", "middle")
-		.text(function(d, i) { return legendText[i]; });
+	var ticks = d3.axisBottom(d3.scaleLinear()
+														.domain([minPop,maxPop])
+														.range([0,legendWidth]));
+	legend.append("g")
+		.attr("transform","translate(" + 0 + "," + legendHeight + ")")
+		.call(ticks);
 
-	function update(year){
+	function updateColor(index){
+		areas.transition()
+				.style("fill",function(d){
+					return getColor(d.properties[years[index]]);});
+	}
+	function updateButton(newClass){
+		button.classed(newClass,true)
+		d3.select("#button text")
+			.transition()
+			.text(newClass.toUpperCase())
+	}
+	function updateCurrYear(index){
+		currYear.transition()
+							.text(years[index])
+	}
+
+	console.log(years.length);
+
+	/*function update(year){
 		slider.property("value", year);
 		d3.select(".year").text(year);
 		countyShapes.style("fill", function(d) {
-			var col = 0;
-			if(d.properties.years != null)
-			{
-				var num = d.properties.years.find(x=> x.year_MENTIONS == year);
-				col = num == null ? 0: num.Number;
-			}
-			return color(col)
+			return color(d.properties.years[year][0].rate)
 		});
+	}*/
+
+
+        function tick(timer) {
+			if(index < years.length){
+					console.log(index);
+					updateColor(index);
+					updateButton("pause");
+					updateCurrYear(index);
+				} else{
+					index -= 1; //hard coding for tooltips to make sense
+					console.log(index);
+					if(timer)
+						timer.stop();
+					updateButton("reset");
+				}    
 	}
 
-	var slider = d3.select(".slider")
-		.append("input")
-			.attr("type", "range")
-			.attr("min", 1996)
-			.attr("max", 2012)
-			.attr("step", 1)
-			.on("input", function() {
-				var year = this.value;
-				update(year);
-			});
 
-update(2015);
+	/*var slider = viz.append("g")
+						.attr("class", "slider")
+    					.attr("transform", "translate(" + (margin.left + buttonWidth) + "," + (margin.top) + ")")
+					.append("input")
+						.attr("width", panelWidth - buttonWidth)
+    					.attr("height", buttonHeight)
+						.attr("type", "range")
+						.attr("min", 0)
+						.attr("max", years.length - 1)
+						.attr("step", 1)
+						.on("input", function() {
+							index = this.value;
+							tick();
+						});*/
 
-
-
+	button.on("click",function(){
+		if(button.classed("reset")){
+			button.classed("reset",false);
+			index = 0;
+			console.log(index);//
+			updateColor(index);
+			updateButton("play");
+			updateCurrYear(index);
+		}else if(button.classed("play")){
+			button.classed("play",false);
+			timer = d3.interval(function(elapsed){
+				console.log(elapsed);
+				index +=1;
+				tick(timer);
+				},500);
+		}else if(button.classed("pause")){
+			button.classed("pause",false);
+			timer.stop();
+			updateButton("play");
+		}
+	})
 });
