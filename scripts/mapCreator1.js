@@ -61,8 +61,8 @@ function drawTooltip(d,currYear) {
 
 		d3.select("#tooltip")
 			.classed("hidden",false)
-			.style("left", (window.pageXOffset + matrix.e + 15) + "px")
-            .style("top", (window.pageYOffset + matrix.f - 15) + "px")
+			.style("left", d + "px")
+            .style("top", d + "px")
 			.html(d.properties.name + "<br>"+ d.properties[currYear]);
 }
 
