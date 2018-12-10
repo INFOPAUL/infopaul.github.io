@@ -99,7 +99,8 @@
                         <ul class="list-inline intro-social-buttons">
                             <hr class="intro-divider">
                             <li>
-                                <button  type="button" class="btn btn-danger btn-md w-200" style="background:#CC0000;border-color:#CC0000;" onclick="javascript: document.getElementById('go').click();"><h4>Learn more</h4></button>
+                                <button id="learnMoreMain"  type="button" class="btn btn-danger btn-md w-200" style="background:#CC0000;border-color:#CC0000;">   <h4>Learn more</h4>
+                                </button>
                             </li>
                             
                         </ul>
@@ -117,6 +118,7 @@
 
 
    <!--UN MAP STARTED-->
+   <a id="UNMap"></a>
    <div class="push-20 h-100">
         <div class="container h-100">
             <div class="row h-100">
@@ -278,7 +280,7 @@
 
 <script>
 $(document).ready(function(){
-    $('a[href="#home"], a[href="#features"], a[href="#recommendation"], a[href="#contact"]').on('click',function (e) {
+    $('a[href="#home"], a[href="#UNMap"], a[href="#recommendation"], a[href="#contact"]').on('click',function (e) {
         e.preventDefault();
 
         var target = this.hash;
@@ -291,6 +293,15 @@ $(document).ready(function(){
         });
     });
 });
+</script>
+
+<script type="text/javascript">
+   $("#learnMoreMain").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#UNMap").offset().top},
+        'slow');
+  });
+
 </script>
  <!--SCRIPTS END-->
 
