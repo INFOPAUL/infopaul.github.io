@@ -56,8 +56,6 @@ var currYear = viz.append("text")
 
 //Tooltip drawing
 function drawTooltip(d,currYear) {
-	var matrix = this.getScreenCTM()
-        .translate(+ this.getAttribute("cx"), + this.getAttribute("cy"));
 
 		d3.select("#tooltip")
 			.classed("hidden",false)
