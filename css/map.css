@@ -25,3 +25,17 @@
 #tooltip.hidden {
   display: none;
 }
+
+path.area{
+  stroke-width:0.5;
+  stroke: black;
+}
+path.area.highlight{
+  stroke-width:2;
+  stroke: black;
+}
+
+#legendRect{
+  stroke-width:5;
+  stroke: black;
+}
