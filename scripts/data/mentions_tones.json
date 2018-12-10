@@ -1,0 +1,447 @@
+[
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "AUT",
+    "MentionDocTone_MENTIONS": -4.776119
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "BEL",
+    "MentionDocTone_MENTIONS": -3.4482758
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "BGR",
+    "MentionDocTone_MENTIONS": -3.0925927
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "CHE",
+    "MentionDocTone_MENTIONS": -4.6357617
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "CYP",
+    "MentionDocTone_MENTIONS": -0.5405405
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "CZE",
+    "MentionDocTone_MENTIONS": -3.0647986
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "DEU",
+    "MentionDocTone_MENTIONS": -4.9131217
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "DNK",
+    "MentionDocTone_MENTIONS": -4.97425
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "ESP",
+    "MentionDocTone_MENTIONS": -4.6215754
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "EST",
+    "MentionDocTone_MENTIONS": -2.5298665
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "FIN",
+    "MentionDocTone_MENTIONS": -3.6144578
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "FRA",
+    "MentionDocTone_MENTIONS": -4.299584
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "GBR",
+    "MentionDocTone_MENTIONS": -3.7328095
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "GRC",
+    "MentionDocTone_MENTIONS": -3.3946319
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "HUN",
+    "MentionDocTone_MENTIONS": -4.1626678
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "IRL",
+    "MentionDocTone_MENTIONS": -4.0229883
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "ISL",
+    "MentionDocTone_MENTIONS": -1.7411201
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "ITA",
+    "MentionDocTone_MENTIONS": -4.489164
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "LTU",
+    "MentionDocTone_MENTIONS": -3.1914895
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "LUX",
+    "MentionDocTone_MENTIONS": -2.8503563
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "LVA",
+    "MentionDocTone_MENTIONS": -2.7829313
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "MLT",
+    "MentionDocTone_MENTIONS": -4.6182847
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "NLD",
+    "MentionDocTone_MENTIONS": -4.710633
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "NOR",
+    "MentionDocTone_MENTIONS": -2.7777777
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "POL",
+    "MentionDocTone_MENTIONS": -2.7559056
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "ROU",
+    "MentionDocTone_MENTIONS": -2.393617
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "SVK",
+    "MentionDocTone_MENTIONS": -3.238342
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "SVN",
+    "MentionDocTone_MENTIONS": -3.9682539
+  },
+  {
+    "year_MENTIONS": 2015,
+    "ISO": "SWE",
+    "MentionDocTone_MENTIONS": -2.6604068
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "AUT",
+    "MentionDocTone_MENTIONS": -3.9517014
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "BEL",
+    "MentionDocTone_MENTIONS": -2.919708
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "BGR",
+    "MentionDocTone_MENTIONS": -3.9215686
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "CHE",
+    "MentionDocTone_MENTIONS": -4.8109965
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "CYP",
+    "MentionDocTone_MENTIONS": -4.7619047
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "CZE",
+    "MentionDocTone_MENTIONS": -3.2418952
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "DEU",
+    "MentionDocTone_MENTIONS": -4.4419136
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "DNK",
+    "MentionDocTone_MENTIONS": -2.5027392
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "ESP",
+    "MentionDocTone_MENTIONS": -3.85208
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "EST",
+    "MentionDocTone_MENTIONS": -1.8072289
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "FIN",
+    "MentionDocTone_MENTIONS": -3.2258065
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "FRA",
+    "MentionDocTone_MENTIONS": -3.5110416
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "GBR",
+    "MentionDocTone_MENTIONS": -4.3557167
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "GRC",
+    "MentionDocTone_MENTIONS": -4.7685833
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "HRV",
+    "MentionDocTone_MENTIONS": -4.637681
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "HUN",
+    "MentionDocTone_MENTIONS": -3.2685513
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "IRL",
+    "MentionDocTone_MENTIONS": -4.271739
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "ISL",
+    "MentionDocTone_MENTIONS": -2.6613703
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "ITA",
+    "MentionDocTone_MENTIONS": -3.409091
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "LTU",
+    "MentionDocTone_MENTIONS": -2.6293468
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "LUX",
+    "MentionDocTone_MENTIONS": -2.857143
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "LVA",
+    "MentionDocTone_MENTIONS": -4.451476
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "MLT",
+    "MentionDocTone_MENTIONS": -4.737903
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "NLD",
+    "MentionDocTone_MENTIONS": -3.7209303
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "NOR",
+    "MentionDocTone_MENTIONS": -2.9084442
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "POL",
+    "MentionDocTone_MENTIONS": -2.512386
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "PRT",
+    "MentionDocTone_MENTIONS": -1.1922504
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "ROU",
+    "MentionDocTone_MENTIONS": -2.8314028
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "SVK",
+    "MentionDocTone_MENTIONS": -4.2871284
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "SVN",
+    "MentionDocTone_MENTIONS": -4.2168674
+  },
+  {
+    "year_MENTIONS": 2016,
+    "ISO": "SWE",
+    "MentionDocTone_MENTIONS": -2.2560632
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "AUT",
+    "MentionDocTone_MENTIONS": -2.7888446
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "BEL",
+    "MentionDocTone_MENTIONS": -4.1353383
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "BGR",
+    "MentionDocTone_MENTIONS": -1.3540261
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "CHE",
+    "MentionDocTone_MENTIONS": -3.826955
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "CZE",
+    "MentionDocTone_MENTIONS": -2.9761906
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "DEU",
+    "MentionDocTone_MENTIONS": -3.4530387
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "DNK",
+    "MentionDocTone_MENTIONS": -3.3783784
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "ESP",
+    "MentionDocTone_MENTIONS": -5.084746
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "EST",
+    "MentionDocTone_MENTIONS": -2.0408163
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "FIN",
+    "MentionDocTone_MENTIONS": -4.278248
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "FRA",
+    "MentionDocTone_MENTIONS": -5.2419353
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "GBR",
+    "MentionDocTone_MENTIONS": -3.7151704
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "GRC",
+    "MentionDocTone_MENTIONS": -3.3898306
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "HUN",
+    "MentionDocTone_MENTIONS": -3.3665836
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "IRL",
+    "MentionDocTone_MENTIONS": -2.7918782
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "ISL",
+    "MentionDocTone_MENTIONS": -2.0188468
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "ITA",
+    "MentionDocTone_MENTIONS": -3.3783784
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "LTU",
+    "MentionDocTone_MENTIONS": -4.6025105
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "LUX",
+    "MentionDocTone_MENTIONS": -1.3824885
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "LVA",
+    "MentionDocTone_MENTIONS": -1.7857143
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "MLT",
+    "MentionDocTone_MENTIONS": -2.8
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "NLD",
+    "MentionDocTone_MENTIONS": -3.6795385
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "NOR",
+    "MentionDocTone_MENTIONS": -4.8672566
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "POL",
+    "MentionDocTone_MENTIONS": -4.576271
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "PRT",
+    "MentionDocTone_MENTIONS": -0.6331438
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "ROU",
+    "MentionDocTone_MENTIONS": -2.2058823
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "SVK",
+    "MentionDocTone_MENTIONS": -4.0268455
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "SVN",
+    "MentionDocTone_MENTIONS": -3.9682539
+  },
+  {
+    "year_MENTIONS": 2017,
+    "ISO": "SWE",
+    "MentionDocTone_MENTIONS": -3.543307
+  }
+]

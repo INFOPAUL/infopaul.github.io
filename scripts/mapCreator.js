@@ -1,3 +1,6 @@
+function createMap(id, dataUrl)
+{
+
 // Margin Convention
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		padding = {top: 50, right: 0, bottom: 50, left: 50}, //left padding for button, bottom padding for legend
@@ -6,7 +9,7 @@ var margin = {top: 20, right: 20, bottom: 20, left: 20},
 		panelWidth = vizWidth - margin.left - margin.right,
 		panelHeight = vizHeight - margin.top - margin.bottom - padding.top - padding.bottom;
 
-var viz = d3.select("#NumberOFNewsMap").append("svg")
+var viz = d3.select("#" + id).append("svg")
 						.attr("class", "viz")
     				.attr("width", vizWidth)
     				.attr("height", vizHeight);
@@ -90,7 +93,7 @@ legend.append("image")
 			.attr("height", legendHeight-1)
 
 
-var files = ["scripts/data/mentions.json", "scripts/data/eu.topojson"];
+var files = [dataUrl, "scripts/data/eu.topojson"];
 
 Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
@@ -238,3 +241,4 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		}
 	})
 });
+}

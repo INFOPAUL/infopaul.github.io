@@ -20,6 +20,7 @@
   border-radius: 3px;
   pointer-events: none;
   text-align: center;
+  z-index: 200;
 }
 
 #tooltip.hidden {
