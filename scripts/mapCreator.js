@@ -168,7 +168,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	}
 	function updateButton(newClass){
 		button.classed(newClass,true)
-		d3.select("#button text")
+		d3.select("#" + id + " #button text")
 			.transition()
 			.text(newClass.toUpperCase())
 	}
