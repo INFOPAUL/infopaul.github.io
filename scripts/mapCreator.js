@@ -111,12 +111,12 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 	     if(mentions)
 	     {
 	    		 mentions.forEach(function(mention) {
-         				country.properties[mention.year_MENTIONS] = mention.Number;
+         				country.properties[mention.year] = mention.Number;
 	     		});
 		 }
 	});
 
-   	var years = data.map(x=>x.year_MENTIONS).filter((v, i, a) => a.indexOf(v) === i); 
+   	var years = data.map(x=>x.year).filter((v, i, a) => a.indexOf(v) === i); 
 	var index = 0;
 
 	currYear.text(years[index]);
