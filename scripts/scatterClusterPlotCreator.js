@@ -24,6 +24,11 @@ d3.json(url)
   .then(function(data){
      	
 
+
+      data = data.sort(function(a, b) {
+   d3.ascending(a.clusters, b.clusters);
+});
+
   	 // Set the ranges
 		var maxKey = d3.max(data, function(d) { return d[fieldX];} );
 		var maxValue = d3.max(data, function(d) { return d[fieldY];} );
