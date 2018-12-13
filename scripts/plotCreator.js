@@ -168,8 +168,8 @@ d3.json(url)
   });
  
   	 // Set the ranges
-		var maxValue = d3.max(data, function(d) { return d['yField'];} );
-		var minValue = d3.min(data, function(d) { return d['yField'];} );
+		var maxValue = d3.max(data, function(d) { return d[yField];} );
+		var minValue = d3.min(data, function(d) { return d[yField];} );
 
 
 
@@ -180,7 +180,7 @@ d3.json(url)
     		return x(d.year_date); 
     	})
     		.y(function(d) { 
-    		return y(d['yField']); 
+    		return y(d[yField]); 
     	})
         .curve(d3.curveMonotoneX);
       // Scale the range of the data
@@ -222,7 +222,7 @@ d3.json(url)
     		var yPosition = d3.event.pageY;
 
                   var html  = "Date: " + timeFormat(d.year_date) + "<br/>" +
-                              "Value: " + d['yField'];
+                              "Value: " + d[yField];
 
                    d3.select("#tooltip")
 					.classed("hidden",false)
@@ -246,7 +246,7 @@ d3.json(url)
   .enter().append("circle") // Uses the enter().append() method
     .attr("class", "dot") // Assign a class for styling
     .attr("cx", function(d, i) { return x(d.year_date) })
-    .attr("cy", function(d) { return y(d['yField']) })
+    .attr("cy", function(d) { return y(d[yField]) })
     .attr("r", 5)
     .on("mouseover", tipMouseover)
     .on("mouseout", tipMouseout);
