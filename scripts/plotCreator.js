@@ -135,13 +135,13 @@ drawChart("UNRefugeePlot", "scripts/data/UNHCR_Statistic.json");
 
 function drawTonesChart(id, url) {
  // Set the dimensions of the canvas / graph
+var $container = $('#' + id);
+var width = $container.width();
+
 var margin = {top: 30, right: 20, bottom: 30, left: 70},
-    width = 500 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
+    width = width - margin.left - margin.right;
 
-
-		var x = d3.scaleLinear().range([0, width]);
-		var y = d3.scaleLinear().range([height, 0]);
     
 // Adds the svg canvas
 var svg = d3.select("#" + id)
@@ -214,7 +214,7 @@ d3.json(url)
 				var xPosition = d3.event.pageX;
     		var yPosition = d3.event.pageY;
 
-    				var date = d3.time.format("%Y%m%d");
+    				var date = d3.timeFormat("%Y%m%d");
                   var html  = "Date: " + d.year_date + "<br/>" +
                               "Value: " + d.median_tone;
 
