@@ -83,18 +83,25 @@ d3.json("scripts/data/UNHCR_Statistic.json")
 
          // Add the tooltip container to the vis container
               // it's invisible and its position/contents are defined during mouseover
-              var tooltip = d3.select("#UNRefugeePlot").append("div")
-                  .attr("class", "tooltip")
-                  .style("opacity", 0);
+
+
+		 
 
               // tooltip mouseover event handler
               var tipMouseover = function(d) {
+
+				var xPosition = d3.event.pageX;
+    		var yPosition = d3.event.pageY;
+
+
                   var html  = "Year: " + d.key + "<br/>" +
                               "Refugees: " + (d.value / 1000000).toFixed(2) + " M";
 
-                  tooltip.html(html)
-                      .style("left", (d3.select(this).attr("cx") + 15) + "px")
-                      .style("top", (d3.select(this).attr("cy") - 15) + "px")
+                   d3.select("#tooltip")
+					.classed("hidden",false)
+					.html(html)
+                      .style("left", xPosition + 15) + "px")
+                      .style("top", yPosition - 15) + "px")
                     .transition()
                       .duration(200) // ms
                       .style("opacity", .9) // started as 0!
@@ -102,7 +109,8 @@ d3.json("scripts/data/UNHCR_Statistic.json")
               };
               // tooltip mouseout event handler
               var tipMouseout = function(d) {
-                  tooltip.transition()
+                  d3.select("#tooltip")
+                  .classed("hidden", true).transition()
                       .duration(300) // ms
                       .style("opacity", 0); // don't care about position!
               };
@@ -120,36 +128,6 @@ d3.json("scripts/data/UNHCR_Statistic.json")
     .attr("r", 5)
     .on("mouseover", tipMouseover)
     .on("mouseout", tipMouseout);
-//      .on("mousemove", mousemove);
-//
-//  var focus = svg.append("g")
-//      .attr("class", "focus")
-//      .style("display", "none");
-//
-//  focus.append("circle")
-//      .attr("r", 4.5);
-//
-//  focus.append("text")
-//      .attr("x", 9)
-//      .attr("dy", ".35em");
-//
-//  svg.append("rect")
-//      .attr("class", "overlay")
-//      .attr("width", width)
-//      .attr("height", height)
-//      .on("mouseover", function() { focus.style("display", null); })
-//      .on("mouseout", function() { focus.style("display", "none"); })
-//      .on("mousemove", mousemove);
-//
-//  function mousemove() {
-//    var x0 = x.invert(d3.mouse(this)[0]),
-//        i = bisectDate(data, x0, 1),
-//        d0 = data[i - 1],
-//        d1 = data[i],
-//        d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-//    focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-//    focus.select("text").text(d);
-//  }
   	})	
   .catch(function(error) {
   	console.log(error);

@@ -233,7 +233,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 				console.log(elapsed);
 				index +=1;
 				tick(timer);
-				},500);
+				},1000);
 		}else if(button.classed("pause")){
 			button.classed("pause",false);
 			timer.stop();
