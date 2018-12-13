@@ -148,7 +148,7 @@ drawChart("UNRefugeePlot", "scripts/data/UNHCR_Statistic.json");
 
 
 
-function drawTonesChart(id, url, yField, yLabel) {
+function drawTonesChart(id, url, yField, yLabel, hideXAxis) {
  // Set the dimensions of the canvas / graph
 var $container = $('#' + id);
 var width = $container.width();
@@ -215,9 +215,18 @@ d3.json(url)
           .attr("cy", function(d) { return y(d.close); });
   */
       // Add the X Axis
+      if(hideXAxis)
+      {
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).tickFormat(timeFormat));	
+          .call(d3.axisBottom(x).tickFormat(timeFormat))
+          .style("opacity", 0);	
+      }
+      else{
+      	 svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x).tickFormat(timeFormat));
+      }
 
        // text label for the x axis
   	svg.append("text")             
@@ -291,5 +300,5 @@ d3.json(url)
 
 }
 
-drawTonesChart("tonesEveryDayPlot", "scripts/data/tones_counts_2015.json","median_tone", "Tone")
-drawTonesChart("countEveryDayPlot", "scripts/data/tones_counts_2015.json","number_of_article", "Number of articles")
+drawTonesChart("tonesEveryDayPlot", "scripts/data/tones_counts_2015.json","median_tone", "Tone", true)
+drawTonesChart("countEveryDayPlot", "scripts/data/tones_counts_2015.json","number_of_article", "Number of articles", false)
