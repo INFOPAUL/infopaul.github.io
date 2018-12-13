@@ -223,14 +223,20 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 		if(button.classed("reset")){
 			button.classed("reset",false);
 			index = 0;
-			console.log(index);//
+			//console.log(index);//
 			updateColor(index);
 			updateButton("play");
 			updateCurrYear(index);
 		}else if(button.classed("play")){
 			button.classed("play",false);
+			if(index == 0)
+			{
+				index +=1;
+				tick(timer);
+			}
+
 			timer = d3.interval(function(elapsed){
-				console.log(elapsed);
+				//console.log(elapsed);
 				index +=1;
 				tick(timer);
 				},1000);
