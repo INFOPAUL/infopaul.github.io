@@ -226,15 +226,16 @@ d3.json(url)
       	 svg.append("g")
           .attr("transform", "translate(0," + height + ")")
           .call(d3.axisBottom(x).tickFormat(timeFormat));
-      }
 
-       // text label for the x axis
-  	svg.append("text")             
+                 // text label for the x axis
+  		svg.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
                            (height + margin.top + 20) + ")")
       .style("text-anchor", "middle")
       .text("Date");
+      }
+
 
 
       // Add the Y Axis
