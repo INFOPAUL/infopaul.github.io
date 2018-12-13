@@ -1,1 +1,254 @@
-[{"Name":"Albania","ISO-3":"ALB","AvgTone":-0.5038884878,"GDP":-1.1297547298,"clusters":1},{"Name":"Austria","ISO-3":"AUT","AvgTone":-0.7992265821,"GDP":0.5927040056,"clusters":3},{"Name":"Belgium","ISO-3":"BEL","AvgTone":-0.549252212,"GDP":0.4454843996,"clusters":3},{"Name":"Bosnia and Herzegovina","ISO-3":"BIH","AvgTone":1.7452038527,"GDP":-1.1010423583,"clusters":2},{"Name":"Belarus","ISO-3":"BLR","AvgTone":1.7216382027,"GDP":-1.0919635947,"clusters":2},{"Name":"Bulgaria","ISO-3":"BGR","AvgTone":-0.6727463603,"GDP":-0.9881547834,"clusters":1},{"Name":"Cyprus","ISO-3":"CYP","AvgTone":0.5879701972,"GDP":-0.306282516,"clusters":2},{"Name":"Denmark","ISO-3":"DNK","AvgTone":-0.4174698889,"GDP":0.9680783965,"clusters":3},{"Name":"Ireland","ISO-3":"IRL","AvgTone":0.4106473923,"GDP":1.4144708298,"clusters":0},{"Name":"Estonia","ISO-3":"EST","AvgTone":1.4101138115,"GDP":-0.5525520602,"clusters":2},{"Name":"Czech Republic","ISO-3":"CZE","AvgTone":-0.1826634705,"GDP":-0.5208635018,"clusters":1},{"Name":"Finland","ISO-3":"FIN","AvgTone":0.1932726204,"GDP":0.5376359743,"clusters":3},{"Name":"France","ISO-3":"FRA","AvgTone":-0.629814446,"GDP":0.2592021171,"clusters":3},{"Name":"Germany","ISO-3":"DEU","AvgTone":-1.1771020889,"GDP":0.4867053518,"clusters":3},{"Name":"Greece","ISO-3":"GRC","AvgTone":-1.1586774588,"GDP":-0.5464120009,"clusters":1},{"Name":"Croatia","ISO-3":"HRV","AvgTone":-0.3514515162,"GDP":-0.7832744636,"clusters":1},{"Name":"Hungary","ISO-3":"HUN","AvgTone":-0.7162257433,"GDP":-0.7611485514,"clusters":1},{"Name":"Iceland","ISO-3":"ISL","AvgTone":1.3401682377,"GDP":1.262988689,"clusters":0},{"Name":"Italy","ISO-3":"ITA","AvgTone":-0.524649024,"GDP":-0.0038915457,"clusters":1},{"Name":"Latvia","ISO-3":"LVA","AvgTone":0.9940522313,"GDP":-0.7081018715,"clusters":2},{"Name":"Lithuania","ISO-3":"LTU","AvgTone":1.1567659378,"GDP":-0.6723679902,"clusters":2},{"Name":"Slovak Republic","ISO-3":"SVK","AvgTone":0.7399702668,"GDP":-0.603771337,"clusters":2},{"Name":"Luxembourg","ISO-3":"LUX","AvgTone":1.6048002243,"GDP":2.968885121,"clusters":0},{"Name":"Macedonia, FYR","ISO-3":"MKD","AvgTone":-2.1964035034,"GDP":-1.0859974985,"clusters":1},{"Name":"Malta","ISO-3":"MLT","AvgTone":-0.1670350879,"GDP":-0.2541274663,"clusters":1},{"Name":"Netherlands","ISO-3":"NLD","AvgTone":-0.0546790175,"GDP":0.6311791151,"clusters":3},{"Name":"Norway","ISO-3":"NOR","AvgTone":-0.7688729167,"GDP":1.702526585,"clusters":3},{"Name":"Poland","ISO-3":"POL","AvgTone":0.3263790309,"GDP":-0.7783329834,"clusters":1},{"Name":"Portugal","ISO-3":"PRT","AvgTone":2.0069210529,"GDP":-0.4619761188,"clusters":2},{"Name":"Romania","ISO-3":"ROU","AvgTone":-0.1643076539,"GDP":-0.9006418632,"clusters":1},{"Name":"Slovenia","ISO-3":"SVN","AvgTone":-0.8097416162,"GDP":-0.3865217554,"clusters":1},{"Name":"Spain","ISO-3":"ESP","AvgTone":0.226983875,"GDP":-0.1758111541,"clusters":1},{"Name":"Sweden","ISO-3":"SWE","AvgTone":-1.0080689192,"GDP":0.8945119251,"clusters":3},{"Name":"Switzerland","ISO-3":"CHE","AvgTone":-0.9714710116,"GDP":2.0833421346,"clusters":3},{"Name":"Turkey","ISO-3":"TUR","AvgTone":-0.9661568999,"GDP":-0.844191611,"clusters":1},{"Name":"United Kingdom","ISO-3":"GBR","AvgTone":0.3250374794,"GDP":0.4094671109,"clusters":3}]
+[
+	{
+		"Name": "Ireland",
+		"ISO-3": "IRL",
+		"AvgTone": 0.4106473923,
+		"GDP": 1.4144708298,
+		"clusters": 0
+	},
+	{
+		"Name": "Iceland",
+		"ISO-3": "ISL",
+		"AvgTone": 1.3401682377,
+		"GDP": 1.262988689,
+		"clusters": 0
+	},
+	{
+		"Name": "Luxembourg",
+		"ISO-3": "LUX",
+		"AvgTone": 1.6048002243,
+		"GDP": 2.968885121,
+		"clusters": 0
+	},
+	{
+		"Name": "Albania",
+		"ISO-3": "ALB",
+		"AvgTone": -0.5038884878,
+		"GDP": -1.1297547298,
+		"clusters": 1
+	},
+	{
+		"Name": "Bulgaria",
+		"ISO-3": "BGR",
+		"AvgTone": -0.6727463603,
+		"GDP": -0.9881547834,
+		"clusters": 1
+	},
+	{
+		"Name": "Czech Republic",
+		"ISO-3": "CZE",
+		"AvgTone": -0.1826634705,
+		"GDP": -0.5208635018,
+		"clusters": 1
+	},
+	{
+		"Name": "Greece",
+		"ISO-3": "GRC",
+		"AvgTone": -1.1586774588,
+		"GDP": -0.5464120009,
+		"clusters": 1
+	},
+	{
+		"Name": "Croatia",
+		"ISO-3": "HRV",
+		"AvgTone": -0.3514515162,
+		"GDP": -0.7832744636,
+		"clusters": 1
+	},
+	{
+		"Name": "Hungary",
+		"ISO-3": "HUN",
+		"AvgTone": -0.7162257433,
+		"GDP": -0.7611485514,
+		"clusters": 1
+	},
+	{
+		"Name": "Italy",
+		"ISO-3": "ITA",
+		"AvgTone": -0.524649024,
+		"GDP": -0.0038915457,
+		"clusters": 1
+	},
+	{
+		"Name": "Macedonia, FYR",
+		"ISO-3": "MKD",
+		"AvgTone": -2.1964035034,
+		"GDP": -1.0859974985,
+		"clusters": 1
+	},
+	{
+		"Name": "Malta",
+		"ISO-3": "MLT",
+		"AvgTone": -0.1670350879,
+		"GDP": -0.2541274663,
+		"clusters": 1
+	},
+	{
+		"Name": "Poland",
+		"ISO-3": "POL",
+		"AvgTone": 0.3263790309,
+		"GDP": -0.7783329834,
+		"clusters": 1
+	},
+	{
+		"Name": "Romania",
+		"ISO-3": "ROU",
+		"AvgTone": -0.1643076539,
+		"GDP": -0.9006418632,
+		"clusters": 1
+	},
+	{
+		"Name": "Slovenia",
+		"ISO-3": "SVN",
+		"AvgTone": -0.8097416162,
+		"GDP": -0.3865217554,
+		"clusters": 1
+	},
+	{
+		"Name": "Spain",
+		"ISO-3": "ESP",
+		"AvgTone": 0.226983875,
+		"GDP": -0.1758111541,
+		"clusters": 1
+	},
+	{
+		"Name": "Turkey",
+		"ISO-3": "TUR",
+		"AvgTone": -0.9661568999,
+		"GDP": -0.844191611,
+		"clusters": 1
+	},
+	{
+		"Name": "Bosnia and Herzegovina",
+		"ISO-3": "BIH",
+		"AvgTone": 1.7452038527,
+		"GDP": -1.1010423583,
+		"clusters": 2
+	},
+	{
+		"Name": "Belarus",
+		"ISO-3": "BLR",
+		"AvgTone": 1.7216382027,
+		"GDP": -1.0919635947,
+		"clusters": 2
+	},
+	{
+		"Name": "Cyprus",
+		"ISO-3": "CYP",
+		"AvgTone": 0.5879701972,
+		"GDP": -0.306282516,
+		"clusters": 2
+	},
+	{
+		"Name": "Estonia",
+		"ISO-3": "EST",
+		"AvgTone": 1.4101138115,
+		"GDP": -0.5525520602,
+		"clusters": 2
+	},
+	{
+		"Name": "Latvia",
+		"ISO-3": "LVA",
+		"AvgTone": 0.9940522313,
+		"GDP": -0.7081018715,
+		"clusters": 2
+	},
+	{
+		"Name": "Lithuania",
+		"ISO-3": "LTU",
+		"AvgTone": 1.1567659378,
+		"GDP": -0.6723679902,
+		"clusters": 2
+	},
+	{
+		"Name": "Slovak Republic",
+		"ISO-3": "SVK",
+		"AvgTone": 0.7399702668,
+		"GDP": -0.603771337,
+		"clusters": 2
+	},
+	{
+		"Name": "Portugal",
+		"ISO-3": "PRT",
+		"AvgTone": 2.0069210529,
+		"GDP": -0.4619761188,
+		"clusters": 2
+	},
+	{
+		"Name": "Austria",
+		"ISO-3": "AUT",
+		"AvgTone": -0.7992265821,
+		"GDP": 0.5927040056,
+		"clusters": 3
+	},
+	{
+		"Name": "Belgium",
+		"ISO-3": "BEL",
+		"AvgTone": -0.549252212,
+		"GDP": 0.4454843996,
+		"clusters": 3
+	},
+	{
+		"Name": "Denmark",
+		"ISO-3": "DNK",
+		"AvgTone": -0.4174698889,
+		"GDP": 0.9680783965,
+		"clusters": 3
+	},
+	{
+		"Name": "Finland",
+		"ISO-3": "FIN",
+		"AvgTone": 0.1932726204,
+		"GDP": 0.5376359743,
+		"clusters": 3
+	},
+	{
+		"Name": "France",
+		"ISO-3": "FRA",
+		"AvgTone": -0.629814446,
+		"GDP": 0.2592021171,
+		"clusters": 3
+	},
+	{
+		"Name": "Germany",
+		"ISO-3": "DEU",
+		"AvgTone": -1.1771020889,
+		"GDP": 0.4867053518,
+		"clusters": 3
+	},
+	{
+		"Name": "Netherlands",
+		"ISO-3": "NLD",
+		"AvgTone": -0.0546790175,
+		"GDP": 0.6311791151,
+		"clusters": 3
+	},
+	{
+		"Name": "Norway",
+		"ISO-3": "NOR",
+		"AvgTone": -0.7688729167,
+		"GDP": 1.702526585,
+		"clusters": 3
+	},
+	{
+		"Name": "Sweden",
+		"ISO-3": "SWE",
+		"AvgTone": -1.0080689192,
+		"GDP": 0.8945119251,
+		"clusters": 3
+	},
+	{
+		"Name": "Switzerland",
+		"ISO-3": "CHE",
+		"AvgTone": -0.9714710116,
+		"GDP": 2.0833421346,
+		"clusters": 3
+	},
+	{
+		"Name": "United Kingdom",
+		"ISO-3": "GBR",
+		"AvgTone": 0.3250374794,
+		"GDP": 0.4094671109,
+		"clusters": 3
+	}
+]
