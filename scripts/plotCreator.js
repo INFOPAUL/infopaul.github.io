@@ -74,6 +74,14 @@ d3.json(url)
           .call(d3.axisBottom(x).tickFormat(function(d){
           	return d;
           }));	
+
+              // text label for the x axis
+  	svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Year");
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
@@ -81,6 +89,13 @@ d3.json(url)
           	return res;
           }));
 
+          svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Refugee number");  
          // Add the tooltip container to the vis container
               // it's invisible and its position/contents are defined during mouseover
 
