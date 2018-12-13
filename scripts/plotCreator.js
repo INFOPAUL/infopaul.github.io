@@ -102,17 +102,12 @@ d3.json("scripts/data/UNHCR_Statistic.json")
 					.html(html)
                       .style("left", (xPosition + 15) + "px")
                       .style("top", (yPosition - 15) + "px")
-                    .transition()
-                      .duration(200) // ms
-                      .style("opacity", .9) // started as 0!
 
               };
               // tooltip mouseout event handler
               var tipMouseout = function(d) {
                   d3.select("#tooltip")
-                  .classed("hidden", true).transition()
-                      .duration(300) // ms
-                      .style("opacity", 0); // don't care about position!
+                  .classed("hidden", true)
               };
 
 
