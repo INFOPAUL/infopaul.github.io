@@ -133,7 +133,7 @@ drawChart("UNRefugeePlot", "scripts/data/UNHCR_Statistic.json");
 
 
 
-function drawTonesChart(id, url, yField) {
+function drawTonesChart(id, url, yField, yLabel) {
  // Set the dimensions of the canvas / graph
 var $container = $('#' + id);
 var width = $container.width();
@@ -203,11 +203,30 @@ d3.json(url)
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
           .call(d3.axisBottom(x).tickFormat(timeFormat));	
+
+       // text label for the x axis
+  	svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Date");
+
+
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
           	return d;
           }));
+
+        // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text(yLabel);      
 
          // Add the tooltip container to the vis container
               // it's invisible and its position/contents are defined during mouseover
@@ -222,7 +241,7 @@ d3.json(url)
     		var yPosition = d3.event.pageY;
 
                   var html  = "Date: " + timeFormat(d.year_date) + "<br/>" +
-                              "Value: " + d[yField];
+                              yLabel + ": " + d[yField];
 
                    d3.select("#tooltip")
 					.classed("hidden",false)
@@ -257,5 +276,5 @@ d3.json(url)
 
 }
 
-drawTonesChart("tonesEveryDayPlot", "scripts/data/tones_counts_2015.json","median_tone")
-drawTonesChart("countEveryDayPlot", "scripts/data/tones_counts_2015.json","number_of_article")
+drawTonesChart("tonesEveryDayPlot", "scripts/data/tones_counts_2015.json","median_tone", "Tone")
+drawTonesChart("countEveryDayPlot", "scripts/data/tones_counts_2015.json","number_of_article", "Number of articles")
