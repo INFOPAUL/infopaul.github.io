@@ -100,8 +100,8 @@ d3.json("scripts/data/UNHCR_Statistic.json")
                    d3.select("#tooltip")
 					.classed("hidden",false)
 					.html(html)
-                      .style("left", xPosition + 15) + "px")
-                      .style("top", yPosition - 15) + "px")
+                      .style("left", (xPosition + 15) + "px")
+                      .style("top", (yPosition - 15) + "px")
                     .transition()
                       .duration(200) // ms
                       .style("opacity", .9) // started as 0!
