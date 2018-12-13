@@ -190,7 +190,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 
         function tick(timer) {
 			if(index < years.length){
-					console.log(index);
+					//console.log(index);
 					updateColor(index);
 					updateButton("pause");
 					updateCurrYear(index);
@@ -233,7 +233,7 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			timer = d3.interval(function(elapsed){
 				//console.log(elapsed);
 				index +=1;
-				//tick(timer);
+				tick(timer);
 				},1000);
 				tick(timer);
 			
