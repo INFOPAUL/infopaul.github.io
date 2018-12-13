@@ -33,27 +33,36 @@ d3.json(url)
       x.domain([minKey, maxKey]);
       y.domain([minValue, maxValue]);	
 
-svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(x)
-    .append("text")
-      .attr("class", "label")
-      .attr("x", width)
-      .attr("y", -6)
-      .style("text-anchor", "end")
-      .text(labelX);
+// Add the Y Axis
+      svg.append("g")
+          .call(d3.axisLeft(y).tickFormat(function(d){
+            return d;
+          }));
 
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(y)
-    .append("text")
-      .attr("class", "label")
+
+
+          // text label for the y axis
+  svg.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text(labelY)
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text(labelY);  
+
+ svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x).tickFormat(function(d){
+            return d;
+          }));
+
+                 // text label for the x axis
+      svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text(labelX);
 
 
 
