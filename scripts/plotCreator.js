@@ -145,7 +145,7 @@ var margin = {top: 30, right: 20, bottom: 30, left: 70},
     	var x = d3.scaleLinear().range([0, width]);
 		var y = d3.scaleLinear().range([height, 0]);
     
-    
+
 // Adds the svg canvas
 var svg = d3.select("#" + id)
     .append("svg")
@@ -158,11 +158,17 @@ var svg = d3.select("#" + id)
 // Get the data
 d3.json(url)
   .then(function(data){      
+
+    var parseTime = d3.timeParse("%Y%m%d");
+
+    var timeFormat = d3.timeFormat("%d.%m.%Y")
+
+  	  data.forEach(function(d) {
+      	d.year_date = parseTime(d.year_date);
+  });
  
   	 // Set the ranges
-		var maxKey = d3.max(data, function(d) { return d.year_date;} );
 		var maxValue = d3.max(data, function(d) { return d.median_tone;} );
-		var minKey = d3.min(data, function(d) { return d.year_date;} );
 		var minValue = d3.min(data, function(d) { return d.median_tone;} );
 
 
@@ -178,7 +184,7 @@ d3.json(url)
     	})
         .curve(d3.curveMonotoneX);
       // Scale the range of the data
-      x.domain([minKey, maxKey]);
+      x.domain(d3.extent(data, function(d) { return d.year_date; }));
       y.domain([minValue, maxValue]);	
       // Add the valueline path.
       svg.append("path")
@@ -196,9 +202,7 @@ d3.json(url)
       // Add the X Axis
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).tickFormat(function(d){
-          	return Math.floor(d / 10000);
-          }));	
+          .call(d3.axisBottom(x).tickFormat(timeFormat));	
       // Add the Y Axis
       svg.append("g")
           .call(d3.axisLeft(y).tickFormat(function(d){
@@ -217,8 +221,7 @@ d3.json(url)
 				var xPosition = d3.event.pageX;
     		var yPosition = d3.event.pageY;
 
-    				var date = d3.timeFormat("%Y%m%d");
-                  var html  = "Date: " + d.year_date + "<br/>" +
+                  var html  = "Date: " + timeFormat(d.year_date) + "<br/>" +
                               "Value: " + d.median_tone;
 
                    d3.select("#tooltip")
