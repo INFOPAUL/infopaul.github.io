@@ -267,3 +267,6 @@ p.copyright {
 .eventHeading {
     margin-top: 0px;
 }
+.newsContent {
+    border-left: 3px solid #e7e7e7;
+}
