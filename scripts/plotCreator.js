@@ -168,10 +168,10 @@ d3.json(url)
 		// Define the line
 		var valueline = d3.line()
    		 .x(function(d) { 
-    		return x(d.key); 
+    		return x(d.year_date); 
     	})
     		.y(function(d) { 
-    		return y(d.value); 
+    		return y(d.median_tone); 
     	})
         .curve(d3.curveMonotoneX);
       // Scale the range of the data
@@ -239,8 +239,8 @@ d3.json(url)
     .data(data)
   .enter().append("circle") // Uses the enter().append() method
     .attr("class", "dot") // Assign a class for styling
-    .attr("cx", function(d, i) { return x(d.key) })
-    .attr("cy", function(d) { return y(d.value) })
+    .attr("cx", function(d, i) { return x(d.year_date) })
+    .attr("cy", function(d) { return y(d.median_tone) })
     .attr("r", 5)
     .on("mouseover", tipMouseover)
     .on("mouseout", tipMouseout);
