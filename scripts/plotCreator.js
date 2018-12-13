@@ -142,6 +142,9 @@ var margin = {top: 30, right: 20, bottom: 30, left: 70},
     height = 400 - margin.top - margin.bottom;
     width = width - margin.left - margin.right;
 
+    	var x = d3.scaleLinear().range([0, width]);
+		var y = d3.scaleLinear().range([height, 0]);
+    
     
 // Adds the svg canvas
 var svg = d3.select("#" + id)
