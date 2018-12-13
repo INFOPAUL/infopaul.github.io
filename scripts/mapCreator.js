@@ -229,17 +229,17 @@ Promise.all(files.map(url => d3.json(url))).then(function(values) {
 			updateCurrYear(index);
 		}else if(button.classed("play")){
 			button.classed("play",false);
-			if(index == 0)
-			{
-				index +=1;
-				tick(timer);
-			}
 
 			timer = d3.interval(function(elapsed){
 				//console.log(elapsed);
 				index +=1;
 				tick(timer);
 				},1000);
+			if(index == 0)
+			{
+				index +=1;
+				tick(timer);
+			}
 		}else if(button.classed("pause")){
 			button.classed("pause",false);
 			timer.stop();
