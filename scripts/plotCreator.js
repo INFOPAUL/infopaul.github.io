@@ -153,7 +153,7 @@ var svg = d3.select("#" + id)
         .attr("height", height + margin.top + margin.bottom)
     .append("g")
         .attr("transform", 
-              "translate(" + margin.left + "," + margin.top + ")");
+              "translate(" + margin.left + "," + 0 + ")");
 
 // Get the data
 d3.json(url)
