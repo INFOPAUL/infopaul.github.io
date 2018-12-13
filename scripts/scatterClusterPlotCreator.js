@@ -86,7 +86,7 @@ svg.append("g")
       .attr("r", 5)
       .attr("cx", function(d) { return x(d[fieldX]); })
       .attr("cy", function(d) { return y(d[fieldY]); })
-      .style("fill", function(d) { return color(d.clusters); });
+      .style("fill", function(d) { return color(d.clusters); })
     .on("mouseover", tipMouseover)
     .on("mouseout", tipMouseout);
 
