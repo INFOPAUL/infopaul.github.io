@@ -273,3 +273,7 @@ p.copyright {
 .centerText {
     text-align: center;
 }
+.timeSeriesButton{
+    background-color: white;
+    border: 2px solid;
+}
