@@ -228,10 +228,19 @@
                     <div class="recommendation-message">
                         <h2 class="section-heading">Meet our drivers<br>
                          Learn why they drive Model S</h2> 
-                         
-                         <div id="tonesEveryDayPlot"></div>
-                         <div id="countEveryDayPlot" style="margin-top: -60px;"></div>
+                         <button onclick="showTimeSerie('2015')">2015</button>
+                         <button onclick="showTimeSerie('2016')">2016</button>
+                         <button onclick="showTimeSerie('2017')">2017</button>
+
+                         <div id="tonesEveryDayPlot2015"></div>
+                         <div id="countEveryDayPlot2015" style="margin-top: -60px;"></div>
                           
+                         <div id="tonesEveryDayPlot2016"></div>
+                         <div id="countEveryDayPlot2016" style="margin-top: -60px;"></div>
+
+                         <div id="tonesEveryDayPlot2017"></div>
+                         <div id="countEveryDayPlot2017" style="margin-top: -60px;"></div>
+
                     </div>
                 </div>
             </div>
@@ -396,6 +405,25 @@ $(document).ready(function(){
         'slow');
   });
 
+</script>
+
+<script type="text/javascript">
+   function showTimeSerie(year)
+   {
+      $("tonesEveryDayPlot2015").hide();
+      $("countEveryDayPlot2015").hide();
+      $("tonesEveryDayPlot2016").hide();
+      $("countEveryDayPlot2016").hide();     
+      $("tonesEveryDayPlot2017").hide();
+      $("countEveryDayPlot2017").hide();
+
+      $("countEveryDayPlot" + year).show();
+      $("countEveryDayPlot" + year).show();
+   }
+   $(document).ready(function(){
+
+   showTimeSerie('2015')
+    });
 </script>
  <!--SCRIPTS END-->
 

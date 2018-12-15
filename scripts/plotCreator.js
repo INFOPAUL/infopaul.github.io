@@ -301,5 +301,11 @@ d3.json(url)
 
 }
 
-drawTonesChart("tonesEveryDayPlot", "scripts/data/tones_counts_2015.json","median_tone", "Tone", true)
-drawTonesChart("countEveryDayPlot", "scripts/data/tones_counts_2015.json","number_of_article", "Number of articles", false)
+drawTonesChart("tonesEveryDayPlot2015", "scripts/data/tones_counts_2015.json","median_tone", "Tone", true)
+drawTonesChart("countEveryDayPlot2015", "scripts/data/tones_counts_2015.json","number_of_article", "Number of articles", false)
+
+drawTonesChart("tonesEveryDayPlot2016", "scripts/data/tones_counts_2016.json","median_tone", "Tone", true)
+drawTonesChart("countEveryDayPlot2016", "scripts/data/tones_counts_2016.json","number_of_article", "Number of articles", false)
+
+drawTonesChart("tonesEveryDayPlot2017", "scripts/data/tones_counts_2017.json","median_tone", "Tone", true)
+drawTonesChart("countEveryDayPlot2017", "scripts/data/tones_counts_2017.json","number_of_article", "Number of articles", false)
