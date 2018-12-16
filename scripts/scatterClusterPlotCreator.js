@@ -130,7 +130,7 @@ d3.json(url)
   });
 
 }
-drawClusterScatterPlot("toneCountCluster", "scripts/data/tone_count_clusters.json", "count", "AvgTone", "Some Count", "Average Tone");
+drawClusterScatterPlot("toneCountCluster", "scripts/data/tone_count_clusters.json", "count", "AvgTone", "Number of events", "Average Tone");
 drawClusterScatterPlot("toneGDPCluster", "scripts/data/tone_gdp_clusters.json", "GDP", "AvgTone", "GDP", "Average Tone");
 drawClusterScatterPlot("clustering_tones_2015_2016", "scripts/data/clustering_tones_2015_2016.json", "tones_2016", "tones_2017", "Tone 2016", "Tone 2017");
 
