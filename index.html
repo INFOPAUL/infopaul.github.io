@@ -62,19 +62,20 @@
                         <a href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#features">Features</a>
+                        <a href="#unchr">UNHCR database</a>
                     </li>
                     <li>
-                        <a href="#recommendation">Recommendation</a>
+                        <a href="#statistics">Statistics</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#correlation">Correlation</a>
                     </li>   
                     <li>
-                         <a id="news" name="newsForm" href="#newsForm" >Subcribe <i class="fa fa-envelope fa-fw"></i></a>
-                        
-                    </li> 
-                    
+                        <a href="#clustering">Clustering</a>
+                    </li>   
+                    <li>
+                        <a href="#timeline">Timeline</a>
+                    </li>   
                 </ul>
 
             </div>
@@ -122,7 +123,7 @@
     <!-- /.intro-header -->
 
 
-
+       <a id="Guideline"></a>
       <div class="content-section-b">
 
         <div class="container">
@@ -178,8 +179,7 @@
 
     </div>
 
-
- <a id="UNMap"></a>
+   <a id="unchr"></a>
  <div class="push-20">
         <div class="container">
             <div class="row">
@@ -216,7 +216,7 @@
    <!--UN MAP DESCRIPTION END-->
 
 
-
+   <a id="statistics"></a>
    <!--UN PLOT START-->
    <div class="content-section-a push-20">
         <div class="container">
@@ -356,6 +356,7 @@
 
     </div>
 
+   <a id="correlation"></a>
  <div class="content-section-a">
         <div class="container">
             <div class = "row">
@@ -417,7 +418,7 @@
 
         </div>
         <!-- /.container -->
-
+   <a id="clustering"></a>
     <div class="content-section-a">
         <div class="container">
             <div class = "row">
@@ -525,6 +526,7 @@
 
     </div>
 
+   <a id="timeline"></a>
    <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -643,18 +645,23 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#features">Features</a>
+                            <a href="#unchr">UNHCR database</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#recommendation">Recommendation</a>
+                            <a href="#statistics">Statistics</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#correlation">Correlation</a>
+                        </li>
+                        <li>
+                            <a href="#clustering">Clustering</a>
+                        </li>
+                        <li>
+                            <a href="#timeline">Timeline</a>
                         </li>
                    </ul>
-                    
                 </div>
                 </div>
                 </div>
@@ -699,7 +706,7 @@
 
 <script>
 $(document).ready(function(){
-    $('a[href="#home"], a[href="#UNMap"], a[href="#recommendation"], a[href="#contact"]').on('click',function (e) {
+    $('a[href="#home"], a[href="#unchr"], a[href="#statistics"], a[href="#correlation"], a[href="#clustering"], a[href="#timeline"]').on('click',function (e) {
         e.preventDefault();
 
         var target = this.hash;
@@ -717,7 +724,7 @@ $(document).ready(function(){
 <script type="text/javascript">
    $("#learnMoreMain").click(function() {
     $('html,body').animate({
-        scrollTop: $("#UNMap").offset().top},
+        scrollTop: $("#Guideline").offset().top},
         'slow');
   });
 
