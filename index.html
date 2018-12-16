@@ -131,7 +131,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-1 col-sm-3">
-                  <p>part 1</p>
+                  <p>Part I</p>
                 </div>
                 <div class="col-lg-11 col-sm-9 newsContent">
                   <h3 class="section-heading eventHeading">UNHCR database for the statistic of refugee</h3>
@@ -140,27 +140,27 @@
             </div>
             <div class="row">
                 <div class="col-lg-1 col-sm-3">
-                  <p>part 2</p>
+                  <p>Part II</p>
                 </div>
                 <div class="col-lg-11 col-sm-9 newsContent">
-                  <h3 class="section-heading eventHeading">visulization on the maps for number of events, average tones and gini coefficient of Tones</h3>                   
+                  <h3 class="section-heading eventHeading">Visulization on the maps for number of events, average tones and gini coefficient of Tones</h3>                   
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-1 col-sm-3">
-                  <p>part 3</p>
+                  <p>Part III</p>
                 </div>
                 <div class="col-lg-11 col-sm-9 newsContent">
-                  <h3 class="section-heading eventHeading">corrlelation analysis of tones and inequaliy of tones in countries</h3>                   
+                  <h3 class="section-heading eventHeading">Correlation analysis of tones and inequaliy of tones in countries</h3>                   
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-1 col-sm-3">
-                  <p>part 4</p>
+                  <p>Part IV</p>
                 </div>
                 <div class="col-lg-11 col-sm-9 newsContent">
-                  <h3 class="section-heading eventHeading">clustering analysis on tones</h3>                   
+                  <h3 class="section-heading eventHeading">Cluster analysis on countries based on the different metrics</h3>                   
                 </div>
             </div>
             <div class="row">
@@ -168,7 +168,7 @@
                   <p>part 5</p>
                 </div>
                 <div class="col-lg-11 col-sm-9 newsContent">
-                  <h3 class="section-heading eventHeading">time revolution of tones in the year of 2015, 2016, 2017</h3>                   
+                  <h3 class="section-heading eventHeading">Time evolution of number and tone of the media coverage in the range of 2015-2017.</h3>                   
                 </div>
             </div>
 
@@ -205,7 +205,7 @@
         <div class="container">
             <div class="row">
                <div>
-                  Some text
+                  The Office of the United Nations High Commissioner for Refugees is a United Nations programme with the mandate to protect refugees, forcibly displaced communities and stateless people, and assist in their voluntary repatriation, local integration or resettlement to a third country. This map visualizes the change in the number of the refugees for each country in the World between 1950-2017. 
                </div>
             </div>
         </div>
@@ -225,10 +225,10 @@
                     <p class="lead"> <!--<a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>-->As we can see latest peek of refugees number was in 1991 (collapsing of USSR and war in Yugoslavia). 
                        </br>
                     </br> 
-                        Since the year of 2015, we could see there is a dramatic increasing happening.
+                        After the year of 2015, we could see there is a dramatic increasing happening.
                     </br>
                     </br>
-                    So now, Europe is about new refugee crisis.
+                    Since 2011, the countries in Middle East, North Africa have been facing civil wars, military coups, suppression of free media and press by authoritarian leaders. Starting from Tunisia, Libya, and Egypt, starting 2013 Syria, Iraq, Yemen have been following them. A lot of people are suffering from the egregious wars, destruction of their homeland. The unjust fail of the opposition media and politician are increasing as well. They all have one hope - migration to Europe to find a new hope to live. So now, Europe is about the new refugee crisis. 
                     </br>
                     </br>
                     In this report we gonna mainly focun on the events and the articles from media related to refugee from the year 2015, 2016 and 2017.
@@ -417,7 +417,9 @@
         <div class="container">
             <div class = "row">
                <h2 class="section-heading centerText">Clustering countries<br>
-                         Plot1:Number of the articles and average tones; <br>plot2:balabala; <br>plot3: Tones in 2016 and 2017</h2> 
+                        Plot1:Number of the articles and average tones; 
+                        <br>Plot2: GDP per capita and average tones; 
+                        <br>Plot3: Tones in 2016 and 2017</h2> 
             </div>
             <div class="row">
                 <div class="col-lg-4">
@@ -469,20 +471,44 @@
                 <p>
                     </br>
                     </br>
+                    Plot 2:
+                    </br>
+                    K-means clustering of countries based on the GDP per capita of them and the average tone of their media coverage related to refugees
+                    <ul>
+                    
+	                    <li>Blue points are the outliers, - Ireland, Iceland, Luxembourg, the countries that are not too busy with refugee problems. </li>
+	                    
+	                    <li>
+	                    	We can see the main interesting points in green, red countries, and some of the orange ones.
+	                    </li>
+
+	                    <li> Green countries are countries with low GDP per capita, they are mainly Baltic countries and Portugal with leftist government. </li>
+	                    
+	                    <li>Orange countries are relatively poor countries, but they are border countries such as Hungary, Turkey, Greece, Bulgaria, Macedonia.</li>
+
+	                    <li>Red dots represent countries with high GDP per capita. These countries are western and high-developed. However, we can see the tendency that, in those countries, average tone of the media coverage is far more negative than poor countries.</li>>
+                   	
+                   	</ul>
+                      
+
+
+                </p>
+                <p>
+                    </br>
+                    </br>
                     Plot 3:
                     </br>
                     We use K-means algorithm  to cluster the countries with the tones in 2016 and 2017.
-                    </br>
-                    From the results we could observe:
-                    </br>
-                    Green group always has negtive tones in those two years, they are the countries: Albania; Austria; Belgium; Bulgaria; Czechia; France; Germany; Greece; Croatia; Hungary; Italy; Macedonia; Norway; Romania; Slovenia; Sweden; Switzerland; Turkey.
-                    </br>
-                    Orange group always has relative less negtive tones in those two years, they are the countries: Bosnia; Belarus; Estonia; Iceland; Latvia; Lithuania; Luxembourg; Portugal.
-                    </br>
-                    Red group always has relative middle tones in those two years, they are the countries: Cyprus; Denmark; Ireland; Finland; Slovakia; Malta; Caribbean; Netherlands; Netherlands; Poland; Russia; Spain; UK; Ukraine.
-                    </br>
-                    Only blue group has relative less negtive tones in 2016 while very negtive tones in 2017. it's the country Liechtenstein.
-
+                    <ul>
+                    
+	                    <li>Green group always has negtive tones in those two years, they are the countries: Albania; Austria; Belgium; Bulgaria; Czechia; France; Germany; Greece; Croatia; Hungary; Italy; Macedonia; Norway; Romania; Slovenia; Sweden; Switzerland; Turkey. </li>
+	                    
+	                    <li>Orange group always has relative less negtive tones in those two years, they are the countries: Bosnia; Belarus; Estonia; Iceland; Latvia; Lithuania; Luxembourg; Portugal.
+	                    Red group always has relative middle tones in those two years, they are the countries: Cyprus; Denmark; Ireland; Finland; Slovakia; Malta; Caribbean; Netherlands; Netherlands; Poland; Russia; Spain; UK; Ukraine. </li>
+	                    
+	                    <li>Only blue group has relative less negtive tones in 2016 while very negtive tones in 2017. it's the country Liechtenstein.</li>
+                   	
+                   	</ul>
                       
 
 
