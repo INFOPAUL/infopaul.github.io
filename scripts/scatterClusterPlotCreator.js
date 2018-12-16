@@ -146,7 +146,7 @@ drawClusterScatterPlot("toneGDPCluster", "scripts/data/tone_gdp_clusters.json", 
 function drawScatterPlot(id, url, fieldX, fieldY, labelX, labelY) {
  // Set the dimensions of the canvas / graph
 var margin = {top: 30, right: 20, bottom: 30, left: 70},
-    width = 500 - margin.left - margin.right,
+    width = 370 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 
@@ -218,7 +218,7 @@ d3.json(url)
 
                   var html  = labelX + ": " + d[fieldX] + "<br/>" +
                               labelY + ": " + d[fieldY] + "<br/>" +
-                              "Country Name: " + d.Name;
+                              "Country Name: " + d.countries;
 
                    d3.select("#tooltip")
           .classed("hidden",false)
