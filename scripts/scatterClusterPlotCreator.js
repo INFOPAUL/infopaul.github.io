@@ -5,8 +5,8 @@ var margin = {top: 30, right: 20, bottom: 30, left: 70},
     height = 400 - margin.top - margin.bottom;
 
 
-		var x = d3.scaleLinear().range([0, width - 10]);
-		var y = d3.scaleLinear().range([height - 10, 0]);
+		var x = d3.scaleLinear().range([0, width + 10]);
+		var y = d3.scaleLinear().range([height + 10, 0]);
     
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
