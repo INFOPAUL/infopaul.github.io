@@ -100,7 +100,7 @@ d3.json(url)
     .on("mouseover", tipMouseover)
     .on("mouseout", tipMouseout);
 
-  var legend = svg.selectAll(".legend")
+  /*var legend = svg.selectAll(".legend")
       .data(color.domain())
     .enter().append("g")
       .attr("class", "legend")
@@ -117,7 +117,7 @@ d3.json(url)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
-      .text(function(d) { return d; });
+      .text(function(d) { return d; });*/
 
 
 
