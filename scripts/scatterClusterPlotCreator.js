@@ -1,7 +1,7 @@
 function drawClusterScatterPlot(id, url, fieldX, fieldY, labelX, labelY) {
  // Set the dimensions of the canvas / graph
 var margin = {top: 30, right: 20, bottom: 30, left: 70},
-    width = 500 - margin.left - margin.right,
+    width = 370 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 
@@ -132,6 +132,7 @@ d3.json(url)
 }
 drawClusterScatterPlot("toneCountCluster", "scripts/data/tone_count_clusters.json", "count", "AvgTone", "Some Count", "Average Tone");
 drawClusterScatterPlot("toneGDPCluster", "scripts/data/tone_gdp_clusters.json", "GDP", "AvgTone", "GDP", "Average Tone");
+drawClusterScatterPlot("clustering_tones_2015_2016", "scripts/data/clustering_tones_2015_2016.json", "tones_2016", "tones_2017", "Tone 2016", "Tone 2017");
 
 
 
